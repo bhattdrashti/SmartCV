@@ -1,0 +1,290 @@
+{
+  "bkgds": [
+    {
+      "bkgd": "Multilingual Content",
+      "id": 1
+    },
+    {
+      "bkgd": "Structured Authoring",
+      "id": 2
+    },
+    {
+      "bkgd": "Technical Writing",
+      "id": 3
+    },
+    {
+      "bkgd": "UI/Web Design",
+      "id": 4
+    }
+  ],
+  "tools": [
+    {
+      "tool": "Adobe FrameMaker",
+      "type": "tw",
+      "id": 1
+    },
+    {
+      "tool": "Confluence",
+      "type": "tw",
+      "id": 2
+    },
+    {
+      "tool": "Jira",
+      "type": "tw",
+      "id": 3
+    },
+    {
+      "tool": "Markdown",
+      "type": "tw",
+      "id": 4
+    },
+    {
+      "tool": "Oxygen XML",
+      "type": "tw",
+      "id": 5
+    },
+    {
+      "tool": "SharePoint",
+      "type": "tw",
+      "id": 6
+    },
+    {
+      "tool": "Visio",
+      "type": "tw",
+      "id": 7
+    },
+    {
+      "tool": "Adobe Creative Suite",
+      "type": "wd",
+      "id": 8
+    },
+    {
+      "tool": "Balsamiq Wireframes",
+      "type": "wd",
+      "id": 9
+    },
+    {
+      "tool": "CSS3",
+      "type": "wd",
+      "id": 10
+    },
+    {
+      "tool": "Drupal",
+      "type": "wd",
+      "id": 11
+    },
+    {
+      "tool": "GIMP",
+      "type": "wd",
+      "id": 12
+    },
+    {
+      "tool": "HTML5",
+      "type": "wd",
+      "id": 13
+    },
+    {
+      "tool": "JavaScript",
+      "type": "wd",
+      "id": 14
+    },
+    {
+      "tool": "JSON",
+      "type": "wd",
+      "id": 15
+    },
+    {
+      "tool": "LESS",
+      "type": "wd",
+      "id": 16
+    },
+    {
+      "tool": "Photoshop",
+      "type": "wd",
+      "id": 17
+    },
+    {
+      "tool": "Responsive Design",
+      "type": "wd",
+      "id": 18
+    },
+    {
+      "tool": "SASS",
+      "type": "wd",
+      "id": 19
+    },
+    {
+      "tool": "WordPress",
+      "type": "wd",
+      "id": 20
+    },
+    {
+      "tool": "YAML",
+      "type": "wd",
+      "id": 21
+    }
+  ],
+  "creds": [
+    {
+      "cred": "API Documentation",
+      "location": "University of Washington",
+      "id": 1
+    },
+    {
+      "cred": "Society for Technical Communication (STC)",
+      "location": "Washington, DC chapter",
+      "id": 2
+    },
+    {
+      "cred": "B. Sc., Computer Information Systems",
+      "location": "East Texas Baptist University",
+      "id": 3
+    }
+  ],
+  "jobs": [
+    {
+      "title": "Technical Writer",
+      "type": "wd",
+      "employer": "SteelCloud LLC",
+      "startMonth": 2,
+      "startYear": 2023,
+      "endMonth": null,
+      "endYear": null,
+      "id": 1
+    },
+    {
+      "title": "Technical Writer",
+      "type": "wd",
+      "employer": "Baxter International",
+      "startMonth": 6,
+      "startYear": 2022,
+      "endMonth": 2,
+      "endYear": 2023,
+      "id": 2
+    },
+    {
+      "title": "Web Developer",
+      "type": "wd",
+      "employer": "Internet Publishing Service (IPS)",
+      "startMonth": 1,
+      "startYear": 2018,
+      "endMonth": 2,
+      "endYear": 2022,
+      "id": 3
+    },
+    {
+      "title": "Web Developer",
+      "type": "wd",
+      "employer": "Non-Roman Script Initiative (NRSI)",
+      "startMonth": 6,
+      "startYear": 2015,
+      "endMonth": 10,
+      "endYear": 2017,
+      "id": 4
+    }
+  ],
+  "portfolio": [
+    {
+      "name": "INSTRUCTIONS FOR USE, Welch Allyn FlexiPort Disposable Blood Pressure Cuff",
+      "url": "https://bit.ly/46vnUdU",
+      "jobId": 2,
+      "id": 1
+    },
+    {
+      "name": "WILDFIRE 5 ADMIN THEME",
+      "url": "https://emcham.io/wildfire-5-admin-theme",
+      "jobId": 3,
+      "id": 2
+    },
+    {
+      "name": "WILDFIRE CLARO ADMIN THEME",
+      "url": "https://emcham.io/wildfire-admin-claro-theme",
+      "jobId": 3,
+      "id": 3
+    },
+    {
+      "name": "SIL PRODUCT WEBSITES",
+      "url": "https://emcham.io/product-sites/",
+      "jobId": 4,
+      "id": 4
+    },
+    {
+      "name": "WORDPRESS SHORT CODE TO GENERATE CSS FOR ARABIC CALLIGRAPHY",
+      "url": "https://emcham.io/wp-css-arabic/",
+      "jobId": 4,
+      "id": 5
+    }
+  ],
+  "achievements": [
+    {
+      "achievement": "Authored user guides for ConfigOS MPO, supporting RMF closed-loop STIG/CIS compliance in complex network environments.",
+      "jobId": 1,
+      "id": 1
+    },
+    {
+      "achievement": "Migrated legacy PDF documentation to Markdown, reducing file size by 97% and improving accessibility.",
+      "jobId": 1,
+      "id": 2
+    },
+    {
+      "achievement": "Documented UI designs using Balsamiq Wireframes and Confluence; linked documentation to Jira requirements for enhanced traceability.",
+      "jobId": 1,
+      "id": 3
+    },
+    {
+      "achievement": "Proposed UX enhancements and collaborated with product teams to refine interface clarity and usability.",
+      "jobId": 1,
+      "id": 4
+    },
+    {
+      "achievement": "Vibe-coded a VBA macro that hyperlinks all page numbers in a Word-generated index to their actual pages.",
+      "jobId": 1,
+      "id": 5
+    },
+    {
+      "achievement": "Vibe-coded a PowerShell script that uninstalls multiple apps and deletes all their supporting files, folders, and registry entries, resulting in a clean OS.",
+      "jobId": 1,
+      "id": 6
+    },
+    {
+      "achievement": "Maintained Instructions for Use (IFU) for medical devices across 24 languages, ensuring regulatory compliance and localization accuracy.",
+      "jobId": 2,
+      "id": 7
+    },
+    {
+      "achievement": "Improved content reuse using Oxygen XML and Adobe FrameMaker, thereby streamlining updates and reducing translation overhead.",
+      "jobId": 2,
+      "id": 8
+    },
+    {
+      "achievement": "Collaborated with distributed teams to align documentation with submission standards and product timelines.",
+      "jobId": 2,
+      "id": 9
+    },
+    {
+      "achievement": "Created multilingual documentation for Drupal modules and themes, including UI localization in English, German, Russian, and Farsi.",
+      "jobId": 3,
+      "id": 10
+    },
+    {
+      "achievement": "Authored integration guides for custom theme features, enhancing visual customization and user experience.",
+      "jobId": 3,
+      "id": 11
+    },
+    {
+      "achievement": "Provided peer training on theme configuration and documentation best practices.",
+      "jobId": 3,
+      "id": 12
+    },
+    {
+      "achievement": "Managed WordPress sites for over 60 software and font products, supporting global users with localized content.",
+      "jobId": 4,
+      "id": 13
+    },
+    {
+      "achievement": "Created custom shortcodes and documented their usage for internal teams, improving publishing efficiency.",
+      "jobId": 4,
+      "id": 14
+    }
+  ]
+}
