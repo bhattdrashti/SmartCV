@@ -81,63 +81,79 @@ This repository is part of the **SME/TW collaboration** for the Technical Writin
 
 The main database file for this service is `api/db-cv.json`, which models how data would be stored and fetched by a backend service.
 
-## Example Query
+## Examples
 
-### Request
+### Postman Request
+
+This call returns a single job where the employer name contains `NRSI`.
 
 ```bash
-GET /recipes?ingredients=spinach,cheese
+GET {base_url}/jobs?employer_like=NRSI
 ```
 
-### Response
+### Postman Response
 
 ```json
 [
-  {
-    "id": 1,
-    "title": "Spinach Cheese Omelet",
-    "ingredients": ["Eggs", "Spinach", "Cheese", "Salt", "Pepper"],
-    "cookingTime": 10,
-    "difficulty": "Easy",
-    "authorId": 1
-  }
+    {
+        "title": "Web Developer",
+        "type": "wd",
+        "employer": "Non-Roman Script Initiative (NRSI)",
+        "startMonth": 6,
+        "startYear": 2015,
+        "endMonth": 10,
+        "endYear": 2017,
+        "id": 4
+    }
 ]
 ```
 
-## Quick Start (Example Integration)
+### cURL Request
 
-### Using cURL
+This call returns a list of portfolio samples that were created for the employer `NRSI`.
+
+The DB tables are joined by setting `jobId` in the **portfolio** resource to the `id` grabbed from the **jobs** resource by the [Postman request](#postman-request).
 
 ```bash
-curl https://example.com/api/recipes?ingredients=tomato,cheese
+curl http://localhost:3000/portfolio?jobId=4
 ```
 
-### Using JavaScript (fetch)
+### cURL Response
 
-```javascript
-fetch('/api/recipes?ingredients=tomato,cheese')
-  .then(response => response.json())
-  .then(data => console.log(data));
+```json
+[
+    {
+        "name": "SIL PRODUCT WEBSITES",
+        "url": "https://emcham.io/product-sites/",
+        "jobId": 4,
+        "id": 4
+    },
+    {
+        "name": "WORDPRESS SHORT CODE TO GENERATE CSS FOR ARABIC CALLIGRAPHY",
+        "url": "https://emcham.io/wp-css-arabic/",
+        "jobId": 4,
+        "id": 5
+    }
+]
 ```
-
-These calls return a filtered list of recipes that match the provided ingredients.
 
 ## Project Structure
 
 ```text
-RecipeBuddy-API/
+SmartCV/
 ├── README.md
 └── api/
-    └── recipe-buddy-db-source.json
+    └── db-cv.json
 ```
 
 ## Use Case Example
 
-A user named **Drashti** opens Recipe Buddy, enters “potatoes, spinach, and cheese” as available ingredients. The API instantly returns dishes like *Spinach Cheese Omelet* or *Aloo Palak*, which can be made immediately without extra shopping. This reduces food waste and simplifies decision-making in the kitchen.
+1. The user grabs keywords from a job description.
+2. The user filters items from the **tools**, **jobs**, and **portfolio** resources to generate a CV tailored to the job description.
 
 ## Collaboration Notes
 
-This repository is maintained by **Drashti Bhatt (SME)** and shared with **Eddie McHam (TW)**. It provides base data and specifications to support API documentation in the **SmartCV** repo.
+This repository is maintained by **Eddie McHam (SME)** and shared with **Drashti Bhatt (TW)**. It provides base data and specifications to support API documentation in the **SmartCV** repo.
 
 Future collaboration will include:  
 
@@ -149,4 +165,4 @@ Future collaboration will include:
 
 This project is part of an academic documentation portfolio and may be used for educational purposes only.  
 
-© 2025 Drashti Bhatt. All rights reserved.
+© 2025 Eddie McHam. All rights reserved.
