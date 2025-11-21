@@ -1,7 +1,6 @@
 # Prerequisites
 
-## Overview
-Follow these steps before you start the SmartCV tutorials. This page explains the tools you need, how to set up the project, how to run the local server, and how to confirm that SmartCV works on your machine.
+Follow these steps before you start the SmartCV [tutorials](../tutorials/index.html). This page explains the tools you need, how to set up the project, how to run the local server, and how to confirm that SmartCV works on your machine.
 
 ---
 
@@ -82,14 +81,14 @@ This means the database loaded and SmartCV is active.
 
 ## Test the service
 
-### Step 1: open a second terminal window
-In a new window, send a request to the **jobs** endpoint:
+### Step 1: Open a second terminal window
+In a new window, send a request to the [`jobs`](../tutorials/index.html) endpoint:
 
 ```bash
 curl http://localhost:3000/jobs
 ```
 
-### Step 2: check the response
+### Step 2: Check the response
 A correct response looks like this:
 
 ```json
@@ -107,7 +106,8 @@ A correct response looks like this:
 ]
 ```
 
-This test uses the **jobs** collection because it has detailed data and is easy to review.  
+This test uses the [`jobs`](../tutorials/index.html) collection because it has detailed data and is easy to review.  
+
 You can test any other SmartCV resource the same way:
 
 ```
@@ -123,16 +123,20 @@ If one request works, the server is running correctly.
 ---
 
 ## SmartCV resources
-You can open these endpoints in your browser to explore the data:
 
-- [http://localhost:3000/bkgds](http://localhost:3000/bkgds)  
-- [http://localhost:3000/tools](http://localhost:3000/tools)  
-- [http://localhost:3000/creds](http://localhost:3000/creds)  
-- [http://localhost:3000/jobs](http://localhost:3000/jobs)  
-- [http://localhost:3000/portfolio](http://localhost:3000/portfolio)  
-- [http://localhost:3000/achievements](http://localhost:3000/achievements)
+After you start json-server, you can open these links in your browser:
 
-These collections match the six resource pages in the SmartCV API reference.
+- http://localhost:3000/bkgds  
+- http://localhost:3000/tools  
+- http://localhost:3000/creds  
+- http://localhost:3000/jobs  
+- http://localhost:3000/portfolio  
+- http://localhost:3000/achievements
+
+Each link shows the raw JSON data for that resource. This helps you confirm that the server is running and that SmartCV loaded the database correctly.
+
+If any link shows an error or empty data, refer to the Troubleshooting section to fix the issue.
+
 
 ---
 
@@ -160,10 +164,10 @@ Use this table to fix common setup problems with SmartCV.
 ---
 
 ## Next steps
-To know more, read:
-- **Overview:** ../index.html  
-- **API References:** ../index.html#api-references  
-- **Tutorials:** ../index.html#tutorials  
+
+- [Prerequisites](../getting-started/prerequisites.html)
+- [API References](../index.html#api-references)
+- [Tutorials](../tutorials/index.html)
 
 ---
 
