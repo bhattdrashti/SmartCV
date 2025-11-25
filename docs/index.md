@@ -1,3 +1,11 @@
+---
+title: SmartCV documentation
+nav_order: 0
+description: "Official documentation for the SmartCV API, tutorials, and setup instructions."
+has_children: true
+layout: default
+---
+
 # SmartCV API documentation
 
 ## Overview
@@ -27,7 +35,7 @@ Use these links to review each resource.
 
 Start here if you are new to SmartCV:
 
-- [`Prerequisites`](tutorials/prerequisites.md): tools you need and how to run the service locally
+- [`Prerequisites`](./getting-started/prerequisites.md): tools you need and how to run the service locally
 
 This page explains how to set up the environment and access the SmartCV API.
 

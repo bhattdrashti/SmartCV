@@ -1,3 +1,10 @@
+---
+title: Tools
+nav_order: 2
+parent: API resources
+description: "Tools, technologies, and skill categories available in SmartCV."
+---
+
 # Tools API
 
 This page explains the `tools` resource in the SmartCV service. Each item lists a tool or software skill.

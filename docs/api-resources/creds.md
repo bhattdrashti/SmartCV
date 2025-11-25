@@ -1,3 +1,10 @@
+---
+title: Credentials
+nav_order: 3
+parent: API resources
+description: "Degrees, certificates, and educational credentials stored in SmartCV."
+---
+
 # Credentials API
 
 This page explains the `creds` resource in SmartCV. Each item lists a degree, course, or certificate.

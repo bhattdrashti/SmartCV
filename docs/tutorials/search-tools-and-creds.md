@@ -1,3 +1,10 @@
+---
+title: Search tools and credentials
+nav_order: 5
+parent: Tutorials
+description: "Search and filter SmartCV tools and credentials by category or type."
+---
+
 # Search tools and credentials by type
 
 This tutorial explains how to search SmartCV tools and credentials by type or category. It shows how to filter skills, degrees, and certificates, read JSON responses, and understand how SmartCV organizes user-provided data.

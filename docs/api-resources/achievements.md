@@ -1,3 +1,10 @@
+---
+title: Achievements
+nav_order: 6
+parent: API resources
+description: "Achievements associated with jobs or skills, useful in CV targeting."
+---
+
 # Achievements API
 
 This page explains the `achievements` resource in SmartCV. Each item lists a work achievement connected to a job.

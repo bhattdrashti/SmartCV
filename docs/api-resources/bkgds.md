@@ -1,3 +1,10 @@
+---
+title: Backgrounds
+nav_order: 1
+parent: API resources
+description: "Career backgrounds and categories used to classify user experience."
+---
+
 # Backgrounds API
 
 This page explains the `bkgds` resource in the SmartCV service. Each item lists a background category provided by the user.

@@ -1,3 +1,10 @@
+---
+title: Get portfolio items for a job
+nav_order: 2
+parent: Tutorials
+description: "Retrieve portfolio items related to a specific job entry."
+---
+
 # Get portfolio items for a job
 
 This tutorial explains how to retrieve portfolio items linked to a specific job. It shows how to use the `portfolio` resource with filters, read JSON responses, and understand how SmartCV connects work samples to job entries.

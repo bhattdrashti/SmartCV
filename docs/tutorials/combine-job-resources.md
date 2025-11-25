@@ -1,3 +1,10 @@
+---
+title: Combine job resources
+nav_order: 4
+parent: Tutorials
+description: "Learn how to combine jobs, achievements, backgrounds, and portfolios."
+---
+
 # Combine job, portfolio, and achievement data
 
 This tutorial explains how to combine SmartCV data from different resources. It shows how to gather job entries, link work samples, attach achievements, and produce a combined structure for analysis or cv building.

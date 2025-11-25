@@ -1,3 +1,10 @@
+---
+title: Jobs
+nav_order: 4
+parent: API resources
+description: "Professional work experience entries with employer, title, and date fields."
+---
+
 # Jobs API
 
 This page explains the `jobs` resource in SmartCV. Each job item lists a past or current role.

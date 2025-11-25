@@ -1,3 +1,10 @@
+---
+title: Build a targeted CV
+nav_order: 3
+parent: Tutorials
+description: "Build a CV that matches job description keywords using SmartCV resources."
+---
+
 # Build a targeted CV
 
 This tutorial explains how to build a targeted cv from SmartCV data. It shows how to select job entries, gather work samples, link achievements, and create a focused output that matches a job description.

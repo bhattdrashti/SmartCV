@@ -1,3 +1,10 @@
+---
+title: Portfolio
+nav_order: 5
+parent: API resources
+description: "Portfolio items linked to jobs, used for building targeted CV outputs."
+---
+
 # Portfolio API
 
 This page explains the `portfolio` resource in SmartCV. Each item lists a work sample linked to a job.

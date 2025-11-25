@@ -1,3 +1,10 @@
+---
+title: Prerequisites
+nav_order: 1
+description: "Tools, installation steps, and environment setup required before using SmartCV."
+parent: Getting started
+---
+
 # Prerequisites
 
 Follow these steps before you start the SmartCV [tutorials](../tutorials/index.html). This page explains the tools you need, how to set up the project, how to run the local server, and how to confirm that SmartCV works on your machine.

@@ -1,3 +1,10 @@
+---
+title: Filter jobs by employer
+nav_order: 1
+parent: Tutorials
+description: "Learn how to filter job entries using employer name queries."
+---
+
 # Filter jobs by employer
 
 This tutorial explains how to search job entries by employer name. It shows how to use the `jobs` resource with filters, read JSON responses, and understand how SmartCV behaves when no records match.
