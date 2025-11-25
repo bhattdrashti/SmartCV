@@ -8,19 +8,28 @@ baseurl: "/SmartCV"
 markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
-    disable : true
+    disable: true
 
 just_the_docs:
   search_enabled: true
   search_button: true
   color_scheme: light
 
-# Enhance Just-the-Docs behavior
-search_enabled: true
+  # 🔥 Enable sidebar + navigation
+  show_sidebar: true
+  navigation_structure: sidebar
+  nav_sort: case_insensitive
+
+  # Optional but nice
+  logo: ""
+  favicon: ""
+
 aux_links:
   "View on GitHub":
     - "https://github.com/bhattdrashti/SmartCV"
+
 last_edit_timestamp: true
 last_edit_time_format: "%b %d, %Y at %I:%M %p"
+
 back_to_top: true
 back_to_top_text: "Back to top"
