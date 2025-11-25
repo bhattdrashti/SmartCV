@@ -2,7 +2,7 @@ title: SmartCV Documentation
 description: API reference and tutorials for the SmartCV service.
 theme: just-the-docs
 
-url: "https://bhattdrashti.github.io/SmartCV"
+url: "https://bhattdrashti.github.io"
 baseurl: "/SmartCV"
 
 markdown: kramdown
@@ -14,8 +14,6 @@ just_the_docs:
   search_enabled: true
   search_button: true
   color_scheme: light
-  show_sidebar: true
-  nav_sort: case_insensitive
 
 aux_links:
   "View on GitHub":
