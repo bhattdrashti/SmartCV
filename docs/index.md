@@ -1,15 +1,9 @@
 ---
-title: SmartCV documentation
-nav_order: 0
-description: "Official documentation for the SmartCV API, tutorials, and setup instructions."
+title: Tutorials
+nav_order: 3
 has_children: true
 layout: default
-
-# ✔ Tell JTD what folders are sections
-children:
-  - api-resources
-  - getting-started
-  - tutorials
+parent: SmartCV Documentation
 ---
 
 # SmartCV API documentation
