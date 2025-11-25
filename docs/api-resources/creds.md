@@ -1,44 +1,28 @@
 # Credentials API
 
-This page explains the `creds` resource in the SmartCV service. The Credentials data lists degrees, certificates, and training items that a user can include in a CV. Each item comes from the local JSON database and returns structured fields that you can filter or combine with other SmartCV resources.
+This page explains the `creds` resource in SmartCV. Each item lists a degree, course, or certificate.
 
 ---
 
-## Base endpoint
+## GET /creds
+Returns all credential entries.
 
-```
-GET /creds
-```
-
-This request returns every credentials entry in the database.
-
-You can also request a single item:
-
-```
-GET /creds/{id}
-```
-
-Replace `{id}` with any valid numeric ID.
+## GET /creds/{id}
+Returns a single credential entry by ID.
 
 ---
 
 ## Fields in this resource
 
-Each `creds` item has these fields:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| cred | string | The name of the credential, degree, or certificate. |
-| location | string | The institution or place where the user earned the credential. |
-| id | number | The unique identifier for this item. |
-
-These fields match the values in api/db-cv.json.
+| Field    | Type   | Description |
+|-----------|--------|-------------|
+| cred      | string | A degree or certificate name. |
+| location  | string | Where the user earned the credential. |
+| id        | number | Unique identifier. |
 
 ---
 
 ## Example response
-
-### GET `/creds`
 
 ```
 [
@@ -46,11 +30,6 @@ These fields match the values in api/db-cv.json.
     "cred": "API Documentation",
     "location": "University of Washington",
     "id": 1
-  },
-  {
-    "cred": "Society for Technical Communication (STC)",
-    "location": "Washington, DC chapter",
-    "id": 2
   },
   {
     "cred": "B. Sc., Computer Information Systems",
@@ -64,32 +43,35 @@ These fields match the values in api/db-cv.json.
 
 ## Try it with curl
 
-Run this command after you start the JSON server:
-
 ```
 curl http://localhost:3000/creds
 ```
 
-If the server runs correctly, the response matches the example JSON in the example response section.
-
 ---
 
-## Search by credential name
+## Filter items
 
-Use the `_like` filter to search by part of a credential title:
+Filter by credential name:
 
 ```
-curl "http://localhost:3000/creds?cred_like=API"
+curl "http://localhost:3000/creds?cred=API Documentation"
+```
+
+Filter by location:
+
+```
+curl "http://localhost:3000/creds?location=Washington"
 ```
 
 ---
 
 ## Related topics
 
-- [Prerequisites](../getting-started/prerequisites.html)
-- [API References](../index.html#api-references)
-- [Tutorials](../tutorials/index.html)
+- [Backgrounds API](bkgds.md)  
+- [Tools API](tools.md)  
+- [Jobs API](jobs.md)  
+- [Portfolio API](portfolio.md)  
+- [Achievements API](achievements.md)  
+- [Tutorials](../../tutorials/index.md)
 
----
-
-[← Back to home](../index.html)
+[← Back to index](../index.md)

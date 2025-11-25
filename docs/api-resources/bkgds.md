@@ -1,62 +1,34 @@
 # Backgrounds API
 
-This page explains the `bkgds` resource in the SmartCV service. The `bkgds` data lists career background categories that a user can include in a CV. Each item comes from the local JSON database and returns structured fields that you can filter or reuse in other SmartCV tasks.
+This page explains the `bkgds` resource in the SmartCV service. Each item lists a background category provided by the user.
 
 ---
 
-## Base endpoint
+## GET /bkgds
+Returns all background entries.
 
-```
-GET /bkgds
-```
-
-This endpoint returns every background entry in the database.
-
-You can also request a single item:
-
-```
-GET /bkgds/{id}
-```
-
-Replace `{id}` with any valid numeric ID.
+## GET /bkgds/{id}
+Returns a single background entry by ID.
 
 ---
 
 ## Fields in this resource
 
-Each `bkgds` item has these fields:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| bkgd | string | The name of the background category. |
-| id | number | The unique identifier for this item. |
-
-These fields match the values in api/db-cv.json.
+| Field | Type   | Description |
+|-------|--------|-------------|
+| bkgd  | string | A background category. |
+| id    | number | Unique identifier. |
 
 ---
 
 ## Example response
 
-### GET `/bkgds`
-
 ```
 [
-  {
-    "bkgd": "Multilingual Content",
-    "id": 1
-  },
-  {
-    "bkgd": "Structured Authoring",
-    "id": 2
-  },
-  {
-    "bkgd": "Technical Writing",
-    "id": 3
-  },
-  {
-    "bkgd": "UI/Web Design",
-    "id": 4
-  }
+  { "bkgd": "Multilingual Content", "id": 1 },
+  { "bkgd": "Structured Authoring", "id": 2 },
+  { "bkgd": "Technical Writing", "id": 3 },
+  { "bkgd": "UI/Web Design", "id": 4 }
 ]
 ```
 
@@ -64,28 +36,29 @@ These fields match the values in api/db-cv.json.
 
 ## Try it with curl
 
-Use this command in a terminal after you start your local JSON server:
-
 ```
 curl http://localhost:3000/bkgds
 ```
 
-If the server runs correctly, the response matches the example JSON in the example response section.
-
 ---
 
-A successful response matches the example JSON in the example response.
+## Filter items
+
+Filter by background category:
+
+```
+curl "http://localhost:3000/bkgds?bkgd=Technical Writing"
+```
 
 ---
 
 ## Related topics
 
-- [Prerequisites](../getting-started/prerequisites.html)
-- [API References](../index.html#api-references)
-- [Tutorials](../tutorials/index.html)
+- [Tools API](tools.md)  
+- [Credentials API](creds.md)  
+- [Jobs API](jobs.md)  
+- [Portfolio API](portfolio.md)  
+- [Achievements API](achievements.md)  
+- [Tutorials](../../tutorials/index.md)
 
----
-
-[← Back to home](../index.html)
-
-
+[← Back to index](../index.md)
