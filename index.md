@@ -2,6 +2,7 @@
 title: "SmartCV API documentation"
 nav_order: 1
 has_children: true
+toc: false
 ---
 
 # SmartCV API documentation
