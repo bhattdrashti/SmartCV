@@ -171,12 +171,3 @@ Response:
 ```
 
 Trim whitespace before sending the request.
-
-## Related resources
-These tutorials continue the workflow and show how to use other SmartCV data:
-
-- [Filter jobs by employer](filter-jobs-by-employer.md)  
-- [Build a targeted cv](build-targeted-cv.md)  
-- [Combine job, portfolio, and achievement data](combine-job-resources.md)  
-- [Search tools and credentials by type](search-tools-and-creds.md)  
-- [Return to the main index](../index.md)

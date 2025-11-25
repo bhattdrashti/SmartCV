@@ -69,16 +69,3 @@ Filter by location:
 ```
 curl "http://localhost:3000/creds?location=Washington"
 ```
-
----
-
-## Related topics
-
-- [Backgrounds API](../api-resources/bkgds.md)  
-- [Tools API](../api-resources/tools.md)  
-- [Jobs API](../api-resources/jobs.md)  
-- [Portfolio API](../api-resources/portfolio.md)  
-- [Achievements API](../api-resources/achievements.md)  
-- [Tutorials](../index.md#tutorials)
-
-[← Back to index](../index.md)

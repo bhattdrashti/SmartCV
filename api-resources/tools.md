@@ -62,16 +62,3 @@ Filter by category:
 ```
 curl "http://localhost:3000/tools?type=tw"
 ```
-
----
-
-## Related topics
-
-- [Backgrounds API](../api-resources/bkgds.md)  
-- [Credentials API](../api-resources/creds.md)  
-- [Jobs API](../api-resources/jobs.md)  
-- [Portfolio API](../api-resources/portfolio.md)  
-- [Achievements API](../api-resources/achievements.md)  
-- [Tutorials](../index.md#tutorials)
-
-[← Back to index](../index.md)

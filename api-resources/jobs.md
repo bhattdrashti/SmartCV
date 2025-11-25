@@ -80,16 +80,3 @@ Filter by job title:
 ```
 curl "http://localhost:3000/jobs?title=Web Developer"
 ```
-
----
-
-## Related topics
-
-- [Backgrounds API](../api-resources/bkgds.md)  
-- [Tools API](../api-resources/tools.md)  
-- [Credentials API](../api-resources/creds.md)  
-- [Portfolio API](../api-resources/portfolio.md)  
-- [Achievements API](../api-resources/achievements.md)  
-- [Tutorials](../index.md#tutorials)
-
-[← Back to index](../index.md)

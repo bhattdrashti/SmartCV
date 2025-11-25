@@ -66,16 +66,3 @@ Filter by sample name:
 ```
 curl "http://localhost:3000/portfolio?name=WordPress"
 ```
-
----
-
-## Related topics
-
-- [Jobs API](../api-resources/jobs.md)  
-- [Achievements API](../api-resources/achievements.md)  
-- [Tools API](../api-resources/tools.md)  
-- [Credentials API](../api-resources/creds.md)  
-- [Backgrounds API](../api-resources/bkgds.md)  
-- [Tutorials](../index.md#tutorials)
-
-[← Back to index](../index.md)

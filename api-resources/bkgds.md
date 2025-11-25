@@ -56,16 +56,3 @@ Filter by background category:
 ```
 curl "http://localhost:3000/bkgds?bkgd=Technical Writing"
 ```
-
----
-
-## Related topics
-
-- [Tools API](../api-resources/tools.md)  
-- [Credentials API](../api-resources/creds.md)  
-- [Jobs API](../api-resources/jobs.md)  
-- [Portfolio API](../api-resources/portfolio.md)  
-- [Achievements API](../api-resources/achievements.md)  
-- [Tutorials](../index.md#tutorials)
-
-[← Back to index](../index.md)
