@@ -10,17 +10,16 @@ All information comes directly from the user.
 
 ## API references
 
-The SmartCV API includes many resources.  
-Each resource has a dedicated page with fields and example responses.
+Each SmartCV resource has a dedicated page with fields, examples, and filtering options.
 
-- [`bkgds`](api/bkgds.html): career backgrounds  
-- [`tools`](api/tools.html): skills and tool categories  
-- [`creds`](api/creds.html): degrees and certificates  
-- [`jobs`](api/jobs.html): professional experience  
-- [`portfolio`](api/portfolio.html): work samples linked to jobs  
-- [`achievements`](api/achievements.html): achievements linked to jobs  
+- [`bkgds`](api-resources/bkgds.md): career backgrounds  
+- [`tools`](api-resources/tools.md): skills and tool categories  
+- [`creds`](api-resources/creds.md): degrees and certificates  
+- [`jobs`](api-resources/jobs.md): work experience  
+- [`portfolio`](api-resources/portfolio.md): samples linked to jobs  
+- [`achievements`](api-resources/achievements.md): achievements linked to jobs  
 
-Use these links to view the structure and details of each resource.
+Use these links to review each resource.
 
 ---
 
@@ -28,7 +27,7 @@ Use these links to view the structure and details of each resource.
 
 Start here if you are new to SmartCV:
 
-- [`Prerequisites`](tutorials/prerequisites.html): tools you need and how to run the service locally
+- [`Prerequisites`](tutorials/prerequisites.md): tools you need and how to run the service locally
 
 This page explains how to set up the environment and access the SmartCV API.
 
@@ -36,14 +35,12 @@ This page explains how to set up the environment and access the SmartCV API.
 
 ## Tutorials
 
+These guides show how to work with SmartCV data:
 
-These step-by-step guides show how to work with SmartCV data:
-
-- [`Filter jobs by employer`](tutorials/filter-jobs-by-employer.html) (coming soon): This tutorial shows you how to search for job entries that match an employer name.
-- [`Get portfolio items for a job`](tutorials/get-portfolio-for-job.html) (coming soon): This tutorial shows you how to find work samples that belong to a specific job.
-- [`Build a targeted CV`](tutorials/build-targeted-cv.html) (coming soon): This tutorial shows you how to use job description keywords to build a focused CV.
-- [`Combine jobs, portfolio, and achievements`](tutorials/combine-job-resources.html) (coming soon): This tutorial shows you how to combine SmartCV resources.
-- [`Search tools and credentials by type`](tutorials/search-tools-and-creds.html) (coming soon): This tutorial shows you how to look up skills and education by category.
+- [`Filter jobs by employer`](tutorials/filter-jobs-by-employer.md)  
+- [`Get portfolio items for a job`](tutorials/get-portfolio-for-job.md)  
+- [`Build a targeted CV`](tutorials/build-targeted-cv.md)  
+- [`Combine job, portfolio, and achievement data`](tutorials/combine-job-resources.md)  
+- [`Search tools and credentials by type`](tutorials/search-tools-and-creds.md)  
 
 
-More tutorials planned for later updates.
