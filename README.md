@@ -4,7 +4,7 @@
 
 ## Overview
 
-**SmartCV** is a JSON-based API that builds customized CVs from structured, user-provided data — not AI-generated text.
+**SmartCV** is a JSON-based API that builds customized CVs from structured, user-provided data—not AI-generated text.
 
 This repository is part of the **SME/TW collaboration** for the Technical Writing Portfolio project.  
 
