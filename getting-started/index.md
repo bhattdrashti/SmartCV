@@ -1,9 +1,8 @@
 ---
 title: Getting started
-nav_order: 1
+nav_order: 3
 has_children: true
-layout: default
-parent: SmartCV Documentation
+parent: SmartCV API documentation
 ---
 
 

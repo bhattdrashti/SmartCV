@@ -1,9 +1,7 @@
 ---
-title: Tutorials
-nav_order: 3
+title: "SmartCV API documentation"
+nav_order: 1
 has_children: true
-layout: default
-parent: SmartCV Documentation
 ---
 
 # SmartCV API documentation
