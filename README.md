@@ -164,5 +164,3 @@ Future collaboration will include:
 ## License
 
 This project is part of an academic documentation portfolio and may be used for educational purposes only.  
-
-© 2025 Eddie McHam. All rights reserved.
