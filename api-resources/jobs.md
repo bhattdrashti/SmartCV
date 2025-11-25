@@ -2,7 +2,7 @@
 title: Jobs
 nav_order: 4
 parent: API resources
-description: "Professional work experience entries with employer, title, and date fields."
+grand_parent: SmartCV Documentation
 ---
 
 # Jobs API
@@ -11,10 +11,10 @@ This page explains the `jobs` resource in SmartCV. Each job item lists a past or
 
 ---
 
-## GET /jobs
+## GET `/jobs`
 Returns all job entries.
 
-## GET /jobs/{id}
+## GET `/jobs/{id}`
 Returns a single job entry by ID.
 
 ---
@@ -85,11 +85,11 @@ curl "http://localhost:3000/jobs?title=Web Developer"
 
 ## Related topics
 
-- [Backgrounds API](bkgds.md)  
-- [Tools API](tools.md)  
-- [Credentials API](creds.md)  
-- [Portfolio API](portfolio.md)  
-- [Achievements API](achievements.md)  
-- [Tutorials](../../tutorials/index.md)
+- [Backgrounds API](../api-resources/bkgds.md)  
+- [Tools API](../api-resources/tools.md)  
+- [Credentials API](../api-resources/creds.md)  
+- [Portfolio API](../api-resources/portfolio.md)  
+- [Achievements API](../api-resources/achievements.md)  
+- [Tutorials](../index.md#tutorials)
 
 [← Back to index](../index.md)

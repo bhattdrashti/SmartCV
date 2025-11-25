@@ -11,10 +11,10 @@ This page explains the `bkgds` resource in the SmartCV service. Each item lists 
 
 ---
 
-## GET /bkgds
+## GET `/bkgds`
 Returns all background entries.
 
-## GET /bkgds/{id}
+## GET `/bkgds/{id}`
 Returns a single background entry by ID.
 
 ---
@@ -61,11 +61,11 @@ curl "http://localhost:3000/bkgds?bkgd=Technical Writing"
 
 ## Related topics
 
-- [Tools API](tools.md)  
-- [Credentials API](creds.md)  
-- [Jobs API](jobs.md)  
-- [Portfolio API](portfolio.md)  
-- [Achievements API](achievements.md)  
-- [Tutorials](../../tutorials/index.md)
+- [Tools API](../api-resources/tools.md)  
+- [Credentials API](../api-resources/creds.md)  
+- [Jobs API](../api-resources/jobs.md)  
+- [Portfolio API](../api-resources/portfolio.md)  
+- [Achievements API](../api-resources/achievements.md)  
+- [Tutorials](../index.md#tutorials)
 
 [← Back to index](../index.md)

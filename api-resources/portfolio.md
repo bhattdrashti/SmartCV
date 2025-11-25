@@ -11,10 +11,10 @@ This page explains the `portfolio` resource in SmartCV. Each item lists a work s
 
 ---
 
-## GET /portfolio
+## GET `/portfolio`
 Returns all portfolio entries.
 
-## GET /portfolio/{id}
+## GET `/portfolio/{id}`
 Returns a single portfolio entry by ID.
 
 ---
@@ -71,11 +71,11 @@ curl "http://localhost:3000/portfolio?name=WordPress"
 
 ## Related topics
 
-- [Jobs API](jobs.md)  
-- [Achievements API](achievements.md)  
-- [Tools API](tools.md)  
-- [Credentials API](creds.md)  
-- [Backgrounds API](bkgds.md)  
-- [Tutorials](../../tutorials/index.md)
+- [Jobs API](../api-resources/jobs.md)  
+- [Achievements API](../api-resources/achievements.md)  
+- [Tools API](../api-resources/tools.md)  
+- [Credentials API](../api-resources/creds.md)  
+- [Backgrounds API](../api-resources/bkgds.md)  
+- [Tutorials](../index.md#tutorials)
 
 [← Back to index](../index.md)

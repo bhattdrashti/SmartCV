@@ -11,10 +11,10 @@ This page explains the `achievements` resource in SmartCV. Each item lists a wor
 
 ---
 
-## GET /achievements
+## GET `/achievements`
 Returns all achievement entries.
 
-## GET /achievements/{id}
+## GET `/achievements/{id}`
 Returns a single achievement entry by ID.
 
 ---
@@ -69,11 +69,11 @@ curl "http://localhost:3000/achievements?achievement=guides"
 
 ## Related topics
 
-- [Jobs API](jobs.md)  
-- [Portfolio API](portfolio.md)  
-- [Tools API](tools.md)  
-- [Credentials API](creds.md)  
-- [Backgrounds API](bkgds.md)  
-- [Tutorials](../../tutorials/index.md)
+- [Jobs API](../api-resources/jobs.md)  
+- [Portfolio API](../api-resources/portfolio.md)  
+- [Tools API](../api-resources/tools.md)  
+- [Credentials API](../api-resources/creds.md)  
+- [Backgrounds API](../api-resources/bkgds.md)  
+- [Tutorials](../index.md#tutorials)
 
 [← Back to index](../index.md)

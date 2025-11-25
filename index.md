@@ -10,9 +10,7 @@ parent: SmartCV Documentation
 
 ## Overview
 
-SmartCV is a JSON-based service that creates customized CV outputs from verified user data.  
-It helps developers build CV tools that match job description keywords without using artificial intelligence.  
-All information comes directly from the user.
+SmartCV is a JSON-based service that creates customized CV outputs from verified user data. It helps developers build CV tools that match job description keywords without using artificial intelligence. All information comes directly from the user.
 
 ---
 

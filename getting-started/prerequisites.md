@@ -7,7 +7,7 @@ parent: Getting started
 
 # Prerequisites
 
-Follow these steps before you start the SmartCV [tutorials](../index.html#tutorials). This page explains the tools you need, how to set up the project, how to run the local server, and how to confirm that SmartCV works on your machine.
+Follow these steps before you start the SmartCV [tutorials](../index.md#tutorials). This page explains the tools you need, how to set up the project, how to run the local server, and how to confirm that SmartCV works on your machine.
 
 ---
 
@@ -89,7 +89,7 @@ This means the database loaded and SmartCV is active.
 ## Test the service
 
 ### Step 1: Open a second terminal window
-In a new window, send a request to the [`jobs`](../tutorials/index.html) endpoint:
+In a new window, send a request to the [`jobs`](../api-resources/jobs.md) endpoint:
 
 ```bash
 curl http://localhost:3000/jobs
@@ -113,7 +113,7 @@ A correct response looks like this:
 ]
 ```
 
-This test uses the [`jobs`](../tutorials/index.html) collection because it has detailed data and is easy to review.  
+This test uses the [`jobs`](../api-resources/jobs.md) collection because it has detailed data and is easy to review.  
 
 You can test any other SmartCV resource the same way:
 

@@ -11,10 +11,10 @@ This page explains the `creds` resource in SmartCV. Each item lists a degree, co
 
 ---
 
-## GET /creds
+## GET `/creds`
 Returns all credential entries.
 
-## GET /creds/{id}
+## GET `/creds/{id}`
 Returns a single credential entry by ID.
 
 ---
@@ -74,11 +74,11 @@ curl "http://localhost:3000/creds?location=Washington"
 
 ## Related topics
 
-- [Backgrounds API](bkgds.md)  
-- [Tools API](tools.md)  
-- [Jobs API](jobs.md)  
-- [Portfolio API](portfolio.md)  
-- [Achievements API](achievements.md)  
-- [Tutorials](../../tutorials/index.md)
+- [Backgrounds API](../api-resources/bkgds.md)  
+- [Tools API](../api-resources/tools.md)  
+- [Jobs API](../api-resources/jobs.md)  
+- [Portfolio API](../api-resources/portfolio.md)  
+- [Achievements API](../api-resources/achievements.md)  
+- [Tutorials](../index.md#tutorials)
 
 [← Back to index](../index.md)

@@ -11,10 +11,10 @@ This page explains the `tools` resource in the SmartCV service. Each item lists 
 
 ---
 
-## GET /tools
+## GET `/tools`
 Returns all tool entries.
 
-## GET /tools/{id}
+## GET `/tools/{id}`
 Returns a single tool entry by ID.
 
 ---
@@ -67,11 +67,11 @@ curl "http://localhost:3000/tools?type=tw"
 
 ## Related topics
 
-- [Backgrounds API](bkgds.md)  
-- [Credentials API](creds.md)  
-- [Jobs API](jobs.md)  
-- [Portfolio API](portfolio.md)  
-- [Achievements API](achievements.md)  
-- [Tutorials](../../tutorials/index.md)
+- [Backgrounds API](../api-resources/bkgds.md)  
+- [Credentials API](../api-resources/creds.md)  
+- [Jobs API](../api-resources/jobs.md)  
+- [Portfolio API](../api-resources/portfolio.md)  
+- [Achievements API](../api-resources/achievements.md)  
+- [Tutorials](../index.md#tutorials)
 
 [← Back to index](../index.md)
