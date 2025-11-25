@@ -4,6 +4,12 @@ nav_order: 0
 description: "Official documentation for the SmartCV API, tutorials, and setup instructions."
 has_children: true
 layout: default
+
+# ✔ Tell JTD what folders are sections
+children:
+  - api-resources
+  - getting-started
+  - tutorials
 ---
 
 # SmartCV API documentation
