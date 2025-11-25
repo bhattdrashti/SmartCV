@@ -7,7 +7,7 @@ parent: Getting started
 
 # Prerequisites
 
-Follow these steps before you start the SmartCV [tutorials](../tutorials/index.html). This page explains the tools you need, how to set up the project, how to run the local server, and how to confirm that SmartCV works on your machine.
+Follow these steps before you start the SmartCV [tutorials](../index.html#tutorials). This page explains the tools you need, how to set up the project, how to run the local server, and how to confirm that SmartCV works on your machine.
 
 ---
 
@@ -133,12 +133,13 @@ If one request works, the server is running correctly.
 
 After you start json-server, you can open these links in your browser:
 
-- http://localhost:3000/bkgds  
-- http://localhost:3000/tools  
-- http://localhost:3000/creds  
-- http://localhost:3000/jobs  
-- http://localhost:3000/portfolio  
-- http://localhost:3000/achievements
+- [http://localhost:3000/bkgds](http://localhost:3000/bkgds)
+- [http://localhost:3000/tools](http://localhost:3000/tools)
+- [http://localhost:3000/creds](http://localhost:3000/creds)
+- [http://localhost:3000/jobs](http://localhost:3000/jobs)
+- [http://localhost:3000/portfolio](http://localhost:3000/portfolio)
+- [http://localhost:3000/achievements](http://localhost:3000/achievements)
+
 
 Each link shows the raw JSON data for that resource. This helps you confirm that the server is running and that SmartCV loaded the database correctly.
 
@@ -172,9 +173,8 @@ Use this table to fix common setup problems with SmartCV.
 
 ## Next steps
 
-- [Prerequisites](../getting-started/prerequisites.html)
 - [API References](../index.html#api-references)
-- [Tutorials](../tutorials/index.html)
+- [Tutorials](../index.html#tutorials)
 
 ---
 
