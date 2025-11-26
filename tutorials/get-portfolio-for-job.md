@@ -101,7 +101,8 @@ You can merge these in your script or editor to build a full résumé profile se
 
 ## Frequently asked questions
 
-### What happens if I pass an invalid jobId?
+### What happens when the request uses an invalid jobId?
+
 SmartCV returns an empty array:
 ```
 curl "http://localhost:3000/portfolio?jobId=12345"

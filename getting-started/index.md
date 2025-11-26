@@ -26,7 +26,7 @@ Before using SmartCV, complete the setup instructions:
 
 - [Prerequisites](./prerequisites.md)
 
-Once the prerequisites are installed, you will be able to start the SmartCV JSON Server and test API requests.
+After you install the prerequisites, start the SmartCV JSON Server and test API requests.
 
 ## Quick start
 Follow these steps to verify your environment:
@@ -76,7 +76,7 @@ If anything fails during setup or requests, see:
 - [Troubleshooting](./prerequisites.md#troubleshooting)
 
 ## Next steps
-After completing this section, you will be able to:
+After completing this section, you can:
 
 - Navigate the SmartCV documentation  
 - Run SmartCV locally  

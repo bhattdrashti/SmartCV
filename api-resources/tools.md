@@ -26,7 +26,7 @@ Returns a single tool entry by ID.
 | Field | Type   | Description |
 |--------|--------|-------------|
 | tool   | string | Name of the software, technology, or skill. |
-| category | string | The skill category (e.g., Writing, Design, Programming). |
+| category | string | The skill category (for example, Writing, Design, Programming). |
 | id     | number | Unique identifier. |
 
 ---

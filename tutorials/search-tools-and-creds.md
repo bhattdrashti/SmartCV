@@ -26,7 +26,7 @@ This tutorial covers how to:
 - Use filtered results to build skill and certification sections  
 
 ## Step 1: Search tools by category
-Tools are grouped into résumé-relevant categories such as:
+SmartCV groups tools into résumé-relevant categories such as:
 
 - Authoring Tools  
 - Design Tools  
@@ -122,7 +122,7 @@ curl "http://localhost:3000/credentials?name_like=Technical"
 
 ### Can a tool belong to multiple categories?
 No.  
-Each tool category is fixed, similar to a résumé section.
+SmartCV uses fixed tool categories that function like résumé sections.
 
 ### Are `_like` searches case-insensitive?
 Yes.  
