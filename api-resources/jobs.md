@@ -37,7 +37,7 @@ Returns a single job entry by ID.
 
 ## Example response
 
-```json
+```
 [
   {
     "id": 1,

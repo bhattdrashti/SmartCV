@@ -33,7 +33,7 @@ Returns a single tool entry by ID.
 
 ## Example response
 
-```json
+```
 [
   {
     "id": 1,

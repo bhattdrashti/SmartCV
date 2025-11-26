@@ -33,7 +33,7 @@ Returns a single achievement entry by ID.
 
 ## Example response
 
-```json
+```
 [
   {
     "id": 1,

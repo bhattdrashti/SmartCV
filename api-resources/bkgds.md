@@ -32,7 +32,7 @@ Returns a single background entry by ID.
 
 ## Example response
 
-```json
+```
 [
   { "id": 1, "bkgd": "Technical Writing" },
   { "id": 2, "bkgd": "Structured Authoring (DITA XML)" },

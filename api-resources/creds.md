@@ -33,7 +33,7 @@ Returns a single credential entry by ID.
 
 ## Example response
 
-```json
+```
 [
   {
     "id": 1,

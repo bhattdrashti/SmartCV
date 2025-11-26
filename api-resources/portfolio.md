@@ -34,7 +34,7 @@ Returns a single portfolio entry by ID.
 
 ## Example response
 
-```json
+```
 [
   {
     "id": 1,
