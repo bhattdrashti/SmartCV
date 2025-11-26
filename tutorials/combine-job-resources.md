@@ -160,7 +160,7 @@ Example refined summary:
 }
 ```
 
-## Questions and answers
+## Frequently asked questions
 
 ### The response is empty. What does that mean?
 SmartCV didn’t find records that match the filter value.
