@@ -1,290 +1,188 @@
 {
-  "bkgds": [
+  "backgrounds": [
     {
-      "bkgd": "Multilingual Content",
-      "id": 1
+      "id": 1,
+      "domain": "Technical Writing",
+      "description": "Experience producing user guides, release notes, structured content, UX writing, and knowledge base documentation."
     },
     {
-      "bkgd": "Structured Authoring",
-      "id": 2
+      "id": 2,
+      "domain": "UX Writing & Content Design",
+      "description": "Writing UX copy, tooltips, error messages, empty states, and product microcopy within Figma and agile teams."
     },
     {
-      "bkgd": "Technical Writing",
-      "id": 3
-    },
-    {
-      "bkgd": "UI/Web Design",
-      "id": 4
+      "id": 3,
+      "domain": "Information Technology",
+      "description": "Academic training in software development, programming, and IT systems."
     }
   ],
+
   "tools": [
     {
-      "tool": "Adobe FrameMaker",
-      "type": "tw",
-      "id": 1
+      "id": 1,
+      "category": "Authoring Tools",
+      "items": ["Paligo", "Adobe FrameMaker", "Adobe InDesign", "Adobe RoboHelp", "Adobe Captivate", "MadCap Flare", "Swagger API Documentation"]
     },
     {
-      "tool": "Confluence",
-      "type": "tw",
-      "id": 2
+      "id": 2,
+      "category": "Illustration Tools",
+      "items": ["SolidWorks Composer", "eDrawings", "Adobe Illustrator"]
     },
     {
-      "tool": "Jira",
-      "type": "tw",
-      "id": 3
+      "id": 3,
+      "category": "Design Tools",
+      "items": ["Figma", "Adobe Photoshop", "Canva", "MockFlow", "UX/UI"]
     },
     {
-      "tool": "Markdown",
-      "type": "tw",
-      "id": 4
+      "id": 4,
+      "category": "Programming Languages",
+      "items": ["C", "C++", "HTML", "CSS", "JavaScript", "Core Java", "PHP"]
     },
     {
-      "tool": "Oxygen XML",
-      "type": "tw",
-      "id": 5
+      "id": 5,
+      "category": "Management Tools",
+      "items": ["GitHub", "Jira", "Confluence", "SharePoint", "Zoho", "October CMS"]
     },
     {
-      "tool": "SharePoint",
-      "type": "tw",
-      "id": 6
-    },
-    {
-      "tool": "Visio",
-      "type": "tw",
-      "id": 7
-    },
-    {
-      "tool": "Adobe Creative Suite",
-      "type": "wd",
-      "id": 8
-    },
-    {
-      "tool": "Balsamiq Wireframes",
-      "type": "wd",
-      "id": 9
-    },
-    {
-      "tool": "CSS3",
-      "type": "wd",
-      "id": 10
-    },
-    {
-      "tool": "Drupal",
-      "type": "wd",
-      "id": 11
-    },
-    {
-      "tool": "GIMP",
-      "type": "wd",
-      "id": 12
-    },
-    {
-      "tool": "HTML5",
-      "type": "wd",
-      "id": 13
-    },
-    {
-      "tool": "JavaScript",
-      "type": "wd",
-      "id": 14
-    },
-    {
-      "tool": "JSON",
-      "type": "wd",
-      "id": 15
-    },
-    {
-      "tool": "LESS",
-      "type": "wd",
-      "id": 16
-    },
-    {
-      "tool": "Photoshop",
-      "type": "wd",
-      "id": 17
-    },
-    {
-      "tool": "Responsive Design",
-      "type": "wd",
-      "id": 18
-    },
-    {
-      "tool": "SASS",
-      "type": "wd",
-      "id": 19
-    },
-    {
-      "tool": "WordPress",
-      "type": "wd",
-      "id": 20
-    },
-    {
-      "tool": "YAML",
-      "type": "wd",
-      "id": 21
+      "id": 6,
+      "category": "Databases & Frameworks",
+      "items": ["MySQL", "ZURB Foundation", "Bootstrap"]
     }
   ],
-  "creds": [
+
+  "credentials": [
     {
-      "cred": "API Documentation",
-      "location": "University of Washington",
-      "id": 1
+      "id": 1,
+      "type": "Certification",
+      "name": "Certified AI Technical Writer",
+      "issuer": "Technical Writer HQ"
     },
     {
-      "cred": "Society for Technical Communication (STC)",
-      "location": "Washington, DC chapter",
-      "id": 2
+      "id": 2,
+      "type": "Certification",
+      "name": "Fundamentals of UX Writing",
+      "issuer": "UX Content Collective"
     },
     {
-      "cred": "B. Sc., Computer Information Systems",
-      "location": "East Texas Baptist University",
-      "id": 3
+      "id": 3,
+      "type": "Certification",
+      "name": "Paligo Certified User",
+      "issuer": "Paligo"
+    },
+    {
+      "id": 4,
+      "type": "Certification",
+      "name": "The Microcopy Course",
+      "issuer": "UX Content Collective"
+    },
+    {
+      "id": 5,
+      "type": "Education",
+      "name": "Graduate Certificate – Technical Communication",
+      "school": "Seneca College",
+      "year": 2021
+    },
+    {
+      "id": 6,
+      "type": "Education",
+      "name": "Graduate Certificate – Information Technology",
+      "school": "Algoma University",
+      "year": 2020
+    },
+    {
+      "id": 7,
+      "type": "Education",
+      "name": "B.Sc. Information Technology & Computer Applications",
+      "school": "Gujarat University",
+      "year": 2018
     }
   ],
+
   "jobs": [
     {
+      "id": 1,
       "title": "Technical Writer",
-      "type": "wd",
-      "employer": "SteelCloud LLC",
-      "startMonth": 2,
-      "startYear": 2023,
-      "endMonth": null,
-      "endYear": null,
-      "id": 1
+      "company": "Varicent",
+      "location": "Toronto, ON",
+      "start_date": "2022-05",
+      "end_date": "Present",
+      "responsibilities": [
+        "Embedded in agile product squads from kickoff through release; author UX copy in Figma including tooltips, error messages, empty states, and microcopy.",
+        "Create structured content using DITA XML with strong focus on reuse, metadata, and search optimization.",
+        "Write user guides and documentation that integrate with chatbot and contextual help systems.",
+        "Collaborate with customer support to create how-to guides, FAQs, and troubleshooting articles.",
+        "Own release documentation including feature notes, enhancement summaries, and bug lists.",
+        "Partner with Gen AI team to design and implement an internal Release Notes Generator.",
+        "Maintain and modernize legacy content to align with current functionality and style guidelines.",
+        "Drive consistency and usability across customer-facing and internal documentation."
+      ]
     },
     {
+      "id": 2,
       "title": "Technical Writer",
-      "type": "wd",
-      "employer": "Baxter International",
-      "startMonth": 6,
-      "startYear": 2022,
-      "endMonth": 2,
-      "endYear": 2023,
-      "id": 2
+      "company": "Wallenstein Equipment Inc.",
+      "location": "Waterloo, ON",
+      "start_date": "2022-02",
+      "end_date": "2022-04",
+      "responsibilities": [
+        "Produced and edited mechanical illustrations using SolidWorks Composer and Adobe Illustrator.",
+        "Created operator manuals, installation guides, video scripts, and knowledge base documentation.",
+        "Collaborated with engineering and technical support teams to translate complex concepts into plain language.",
+        "Participated in machine demonstrations and SME interviews.",
+        "Collaborated with external software teams to design a new knowledge portal."
+      ]
     },
     {
-      "title": "Web Developer",
-      "type": "wd",
-      "employer": "Internet Publishing Service (IPS)",
-      "startMonth": 1,
-      "startYear": 2018,
-      "endMonth": 2,
-      "endYear": 2022,
-      "id": 3
-    },
-    {
-      "title": "Web Developer",
-      "type": "wd",
-      "employer": "Non-Roman Script Initiative (NRSI)",
-      "startMonth": 6,
-      "startYear": 2015,
-      "endMonth": 10,
-      "endYear": 2017,
-      "id": 4
+      "id": 3,
+      "title": "Technical Writer Intern",
+      "company": "Lorex Technology",
+      "location": "Markham, ON",
+      "start_date": "2021-06",
+      "end_date": "2021-09",
+      "responsibilities": [
+        "Produced online FAQs, Quick Start Guides, and support documentation for product launches.",
+        "Reviewed documentation projects for clarity, completeness, and branding consistency.",
+        "Collaborated with QA and Product Management to simplify complex technical concepts."
+      ]
     }
   ],
-  "portfolio": [
-    {
-      "name": "INSTRUCTIONS FOR USE, Welch Allyn FlexiPort Disposable Blood Pressure Cuff",
-      "url": "https://bit.ly/46vnUdU",
-      "jobId": 2,
-      "id": 1
-    },
-    {
-      "name": "WILDFIRE 5 ADMIN THEME",
-      "url": "https://emcham.io/wildfire-5-admin-theme",
-      "jobId": 3,
-      "id": 2
-    },
-    {
-      "name": "WILDFIRE CLARO ADMIN THEME",
-      "url": "https://emcham.io/wildfire-admin-claro-theme",
-      "jobId": 3,
-      "id": 3
-    },
-    {
-      "name": "SIL PRODUCT WEBSITES",
-      "url": "https://emcham.io/product-sites/",
-      "jobId": 4,
-      "id": 4
-    },
-    {
-      "name": "WORDPRESS SHORT CODE TO GENERATE CSS FOR ARABIC CALLIGRAPHY",
-      "url": "https://emcham.io/wp-css-arabic/",
-      "jobId": 4,
-      "id": 5
-    }
-  ],
+
   "achievements": [
     {
-      "achievement": "Authored user guides for ConfigOS MPO, supporting RMF closed-loop STIG/CIS compliance in complex network environments.",
+      "id": 1,
       "jobId": 1,
-      "id": 1
+      "description": "Co-designed Varicent’s internal AI-powered Release Notes Generator."
     },
     {
-      "achievement": "Migrated legacy PDF documentation to Markdown, reducing file size by 97% and improving accessibility.",
+      "id": 2,
       "jobId": 1,
-      "id": 2
+      "description": "Reduced support ticket volume by creating targeted troubleshooting guides and FAQs."
     },
     {
-      "achievement": "Documented UI designs using Balsamiq Wireframes and Confluence; linked documentation to Jira requirements for enhanced traceability.",
-      "jobId": 1,
-      "id": 3
-    },
-    {
-      "achievement": "Proposed UX enhancements and collaborated with product teams to refine interface clarity and usability.",
-      "jobId": 1,
-      "id": 4
-    },
-    {
-      "achievement": "Vibe-coded a VBA macro that hyperlinks all page numbers in a Word-generated index to their actual pages.",
-      "jobId": 1,
-      "id": 5
-    },
-    {
-      "achievement": "Vibe-coded a PowerShell script that uninstalls multiple apps and deletes all their supporting files, folders, and registry entries, resulting in a clean OS.",
-      "jobId": 1,
-      "id": 6
-    },
-    {
-      "achievement": "Maintained Instructions for Use (IFU) for medical devices across 24 languages, ensuring regulatory compliance and localization accuracy.",
+      "id": 3,
       "jobId": 2,
-      "id": 7
+      "description": "Produced high-quality mechanical illustrations improving clarity of operator manuals."
+    }
+  ],
+
+  "portfolio": [
+    {
+      "id": 1,
+      "jobId": 1,
+      "title": "Release Notes Generator Documentation",
+      "description": "Authored structured documentation and workflows for an internal AI-powered tool."
     },
     {
-      "achievement": "Improved content reuse using Oxygen XML and Adobe FrameMaker, thereby streamlining updates and reducing translation overhead.",
+      "id": 2,
+      "jobId": 1,
+      "title": "DITA XML Documentation Library",
+      "description": "Created reusable, metadata-driven content across multiple Varicent modules."
+    },
+    {
+      "id": 3,
       "jobId": 2,
-      "id": 8
-    },
-    {
-      "achievement": "Collaborated with distributed teams to align documentation with submission standards and product timelines.",
-      "jobId": 2,
-      "id": 9
-    },
-    {
-      "achievement": "Created multilingual documentation for Drupal modules and themes, including UI localization in English, German, Russian, and Farsi.",
-      "jobId": 3,
-      "id": 10
-    },
-    {
-      "achievement": "Authored integration guides for custom theme features, enhancing visual customization and user experience.",
-      "jobId": 3,
-      "id": 11
-    },
-    {
-      "achievement": "Provided peer training on theme configuration and documentation best practices.",
-      "jobId": 3,
-      "id": 12
-    },
-    {
-      "achievement": "Managed WordPress sites for over 60 software and font products, supporting global users with localized content.",
-      "jobId": 4,
-      "id": 13
-    },
-    {
-      "achievement": "Created custom shortcodes and documented their usage for internal teams, improving publishing efficiency.",
-      "jobId": 4,
-      "id": 14
+      "title": "Mechanical Manuals & Illustrations",
+      "description": "Developed operator manuals and illustrations using SolidWorks Composer."
     }
   ]
 }

@@ -2,168 +2,152 @@
 title: Combine job resources
 nav_order: 4
 parent: Tutorials
-description: "Learn how to combine jobs, achievements, backgrounds, and portfolios."
+description: "Learn how to combine jobs, achievements, and portfolio items to build complete CV sections."
 ---
 
 # Combine job, portfolio, and achievement data
 
-This tutorial explains how to combine SmartCV data from different resources. It shows how to gather job entries, link work samples, attach achievements, and produce a combined structure for analysis or cv building.
+This tutorial explains how to combine SmartCV data from many resources. It shows how to retrieve a job entry, find its linked achievements and portfolio items, and assemble them into one structured output for résumé building.
 
 ## Before you begin
-Start the SmartCV service.  
-If the environment isn’t ready yet, follow:
+Start the SmartCV service.
+
+If the environment isn’t ready yet, review:
 
 - [Prerequisites](prerequisites.md)
 
 ## Goal of this tutorial
 This tutorial covers how to:
+
 - Select a job entry  
 - Retrieve portfolio items for that job  
 - Retrieve achievements for that job  
-- Combine the three resources into one structure  
-- Use the combined data for summaries or cv sections  
+- Combine the data into a unified structure  
+- Use the combined data to build résumé sections  
 
 ## Step 1: Retrieve a job entry
-Begin by selecting a job entry you want to use.
+Choose a job entry to work with.
 
-Example:
+Example: your **Varicent Technical Writer** role (`id: 1`)
 ```
-curl "http://localhost:3000/jobs?id=3"
+curl "http://localhost:3000/jobs/1"
 ```
 
-Response:
+Example response:
 ```
-[
-  {
-    "title": "Web Developer",
-    "type": "wd",
-    "employer": "Internet Publishing Service (IPS)",
-    "startMonth": 1,
-    "startYear": 2018,
-    "endMonth": 2,
-    "endYear": 2022,
-    "id": 3
-  }
+{
+"id": 1,
+"title": "Technical Writer",
+"company": "Varicent",
+"location": "Toronto, ON",
+"start_date": "2022-05",
+"end_date": "Present",
+"responsibilities": [
+"Write UX copy in Figma including tooltips, empty states, and error messages.",
+"Create structured content using DITA XML and metadata.",
+"Maintain documentation consistency and clarity across channels."
 ]
+}
 ```
 
 ## Step 2: Retrieve portfolio items for that job
-Use the job id from Step 1 as the jobId filter:
-
+Use the job’s `id` as the `jobId` filter.
 ```
-curl "http://localhost:3000/portfolio?jobId=3"
+curl "http://localhost:3000/portfolio?jobId=1"
 ```
 
-Response:
+Example response:
 ```
 [
-  {
-    "name": "WILDFIRE 5 ADMIN THEME",
-    "url": "https://emcham.io/wildfire-5-admin-theme",
-    "jobId": 3,
-    "id": 2
-  },
-  {
-    "name": "WILDFIRE CLARO ADMIN THEME",
-    "url": "https://emcham.io/wildfire-admin-claro-theme",
-    "jobId": 3,
-    "id": 3
-  }
+{
+"id": 1,
+"jobId": 1,
+"title": "Release Notes Generator Documentation",
+"description": "Authored structured documentation and workflows for an internal AI-powered tool."
+},
+{
+"id": 2,
+"jobId": 1,
+"title": "DITA XML Documentation Library",
+"description": "Created reusable metadata-driven content across multiple product modules."
+}
 ]
 ```
 
 ## Step 3: Retrieve achievements for that job
-Use the same job id for the achievements resource:
-
+Use the same `jobId` filter.
 ```
-curl "http://localhost:3000/achievements?jobId=3"
+curl "http://localhost:3000/achievements?jobId=1"
 ```
 
-Response:
+Example response:
 ```
 [
-  {
-    "achievement": "Created multilingual documentation for Drupal modules and themes, including UI localization.",
-    "jobId": 3,
-    "id": 10
-  },
-  {
-    "achievement": "Authored integration guides for custom theme features, enhancing visual customization and user experience.",
-    "jobId": 3,
-    "id": 11
-  },
-  {
-    "achievement": "Provided peer training on theme configuration and documentation best practices.",
-    "jobId": 3,
-    "id": 12
-  }
+{
+"id": 1,
+"jobId": 1,
+"title": "Implemented Release Notes Workflow",
+"description": "Partnered with engineering to design an AI-powered Release Notes Generator."
+}
 ]
 ```
 
 ## Step 4: Combine the data into one structure
-Create a combined output that includes the job entry, its work samples, and its achievements:
-
+Assemble the job, portfolio items, and achievements into one JSON object:
 ```
 {
-  "job": {
-    "title": "Web Developer",
-    "type": "wd",
-    "employer": "Internet Publishing Service (IPS)",
-    "startMonth": 1,
-    "startYear": 2018,
-    "endMonth": 2,
-    "endYear": 2022,
-    "id": 3
-  },
-  "portfolio_items": [
-    {
-      "name": "WILDFIRE 5 ADMIN THEME",
-      "url": "https://emcham.io/wildfire-5-admin-theme"
-    },
-    {
-      "name": "WILDFIRE CLARO ADMIN THEME",
-      "url": "https://emcham.io/wildfire-admin-claro-theme"
-    }
-  ],
-  "achievements": [
-    {
-      "achievement": "Created multilingual documentation for Drupal modules and themes, including UI localization.",
-      "id": 10
-    },
-    {
-      "achievement": "Authored integration guides for custom theme features, enhancing visual customization and user experience.",
-      "id": 11
-    },
-    {
-      "achievement": "Provided peer training on theme configuration and documentation best practices.",
-      "id": 12
-    }
-  ]
+"job": {
+"id": 1,
+"title": "Technical Writer",
+"company": "Varicent",
+"location": "Toronto, ON",
+"start_date": "2022-05",
+"end_date": "Present"
+},
+"portfolio_items": [
+{
+"title": "Release Notes Generator Documentation",
+"description": "Authored structured documentation and workflows for an internal AI-powered tool."
+},
+{
+"title": "DITA XML Documentation Library",
+"description": "Created reusable metadata-driven content across multiple product modules."
+}
+],
+"achievements": [
+{
+"title": "Implemented Release Notes Workflow",
+"description": "Partnered with engineering to design an AI-powered Release Notes Generator."
+}
+]
 }
 ```
 
-This combined structure acts as a single source of information about that job.
+Use this combined structure to create:
+
+- Complete résumé experience sections  
+- Job summaries  
+- Achievement highlights  
+- Work sample lists  
 
 ## Step 5: Review and refine the combined data
-Review the combined content and keep the items that support the target role.  
-Use this structure to build summaries, cv sections, or reports.
+Keep only items that match the target role.
 
 Example refined summary:
-
 ```
 {
-  "summary": [
-    "Delivered multilingual Drupal themes with localized UI.",
-    "Produced integration guides that improved customization.",
-    "Trained peers on theme configuration and documentation practices."
-  ]
+"summary": [
+"Authored UX copy and interface messaging across multiple Varicent modules.",
+"Developed reusable DITA XML documentation components.",
+"Designed structured workflows for the AI-driven Release Notes Generator."
+]
 }
 ```
 
 ## Frequently asked questions
 
 ### The response is empty. What does that mean?
-SmartCV didn’t find records that match the filter value.
+SmartCV didn’t find any records matching your filter.
 
 Example:
 ```
@@ -176,31 +160,27 @@ Response:
 ```
 
 ### Does the search ignore case for substring filters?
-Yes. For `_like` queries, SmartCV compares text without considering case.
+Yes. `_like` filters ignore case.
 
 Example:
 ```
-curl "http://localhost:3000/achievements?achievement_like=drupal"
+curl "http://localhost:3000/achievements?description_like=release"
 ```
 
-This value matches achievements that mention “Drupal.”
-
-### How does SmartCV support substring matching in achievements?
-SmartCV uses the `_like` suffix.
+### How does SmartCV support substring matching?
+Use `_like` to perform text searches.
 
 Example:
 ```
-curl "http://localhost:3000/achievements?achievement_like=training"
+curl "http://localhost:3000/portfolio?title_like=XML"
 ```
-
-This value can match entries that describe training work.
 
 ### Why do values with symbols need encoding?
-Characters such as `&`, `/`, or `+` need encoding.
+Characters such as `(`, `)`, `&`, `/`, `%` require encoding.
 
 Example:
 ```
-curl "http://localhost:3000/jobs?employer=Non-Roman%20Script%20Initiative%20%28NRSI%29"
+curl "http://localhost:3000/jobs?company=Wallenstein%20Equipment%20Inc."
 ```
 
 ### Why do trailing spaces break a match?
@@ -208,7 +188,7 @@ Whitespace changes the value.
 
 Example:
 ```
-curl "http://localhost:3000/portfolio?name_like=WILDFIRE%20"
+curl "http://localhost:3000/jobs?company=Varicent%20"
 ```
 
 Response:
@@ -216,4 +196,4 @@ Response:
 []
 ```
 
-Trim whitespace before sending the request.
+Trim spaces before sending the request.

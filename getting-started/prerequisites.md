@@ -3,6 +3,7 @@ title: Prerequisites
 nav_order: 1
 description: "Tools, installation steps, and environment setup required before using SmartCV."
 parent: Getting started
+toc: false
 ---
 
 # Prerequisites
@@ -97,18 +98,15 @@ curl http://localhost:3000/jobs
 
 ### Step 2: Check the response
 A correct response looks like this:
-
-```json
+```
 [
   {
+    "id": 1,
     "title": "Technical Writer",
-    "type": "wd",
-    "employer": "SteelCloud LLC",
-    "startMonth": 2,
-    "startYear": 2023,
-    "endMonth": null,
-    "endYear": null,
-    "id": 1
+    "company": "Varicent",
+    "location": "Toronto, ON",
+    "start_date": "2022-05",
+    "end_date": "Present"
   }
 ]
 ```

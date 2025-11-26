@@ -3,11 +3,13 @@ title: Backgrounds
 nav_order: 1
 parent: API resources
 description: "Career backgrounds and categories used to classify user experience."
+toc: false
 ---
 
 # Backgrounds API
 
-This page explains the `bkgds` resource in the SmartCV service. Each item lists a background category provided by the user.
+This page explains the `bkgds` resource in SmartCV.  
+Each item represents a background category—areas of expertise or domains supporting résumé building.
 
 ---
 
@@ -23,36 +25,36 @@ Returns a single background entry by ID.
 
 | Field | Type   | Description |
 |-------|--------|-------------|
-| bkgd  | string | A background category. |
+| bkgd  | string | A background category representing a domain of expertise. |
 | id    | number | Unique identifier. |
 
 ---
 
 ## Example response
 
-```
+```json
 [
-  { "bkgd": "Multilingual Content", "id": 1 },
-  { "bkgd": "Structured Authoring", "id": 2 },
-  { "bkgd": "Technical Writing", "id": 3 },
-  { "bkgd": "UI/Web Design", "id": 4 }
+  { "id": 1, "bkgd": "Technical Writing" },
+  { "id": 2, "bkgd": "Structured Authoring (DITA XML)" },
+  { "id": 3, "bkgd": "UX Writing & Microcopy" },
+  { "id": 4, "bkgd": "Documentation Architecture" },
+  { "id": 5, "bkgd": "User Assistance & Help Systems" }
 ]
 ```
 
----
-
 ## Try it with curl
-
 ```
 curl http://localhost:3000/bkgds
 ```
 
----
-
 ## Filter items
 
-Filter by background category:
-
+### Filter by background category:
 ```
 curl "http://localhost:3000/bkgds?bkgd=Technical Writing"
+```
+
+### Partial match search:
+```
+curl "http://localhost:3000/bkgds?bkgd_like=DITA"
 ```

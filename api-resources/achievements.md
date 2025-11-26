@@ -2,12 +2,14 @@
 title: Achievements
 nav_order: 6
 parent: API resources
-description: "Achievements associated with jobs or skills, useful in CV targeting."
+description: "Achievements associated with jobs, useful for résumé generation and targeting."
+toc: false
 ---
 
 # Achievements API
 
-This page explains the `achievements` resource in SmartCV. Each item lists a work achievement connected to a job.
+This page describes the `achievements` resource in SmartCV.  
+Each achievement represents a measurable accomplishment tied to a specific job.
 
 ---
 
@@ -23,44 +25,45 @@ Returns a single achievement entry by ID.
 
 | Field       | Type   | Description |
 |-------------|--------|-------------|
-| achievement | string | Description of the achievement. |
-| jobId       | number | Job this achievement belongs to. |
+| achievement | string | Description of the accomplishment. |
+| jobId       | number | ID of the job this achievement belongs to. |
 | id          | number | Unique identifier. |
 
 ---
 
 ## Example response
 
-```
+```json
 [
   {
-    "achievement": "Authored user guides for ConfigOS MPO, supporting compliance workflows.",
+    "id": 1,
     "jobId": 1,
-    "id": 1
+    "achievement": "Created structured user guides using DITA XML and metadata for findability and reuse."
+  },
+  {
+    "id": 2,
+    "jobId": 1,
+    "achievement": "Authored release documentation and leveraged GenAI-driven tooling to automate note creation."
+  },
+  {
+    "id": 3,
+    "jobId": 1,
+    "achievement": "Produced UX copy for tooltips, empty states, and error messages in Figma."
   }
 ]
 ```
-
----
-
 ## Try it with curl
 
 ```
 curl http://localhost:3000/achievements
 ```
-
----
-
 ## Filter items
 
-Filter by jobId:
-
+### Filter achievements by job:
 ```
 curl "http://localhost:3000/achievements?jobId=1"
 ```
-
-Filter by achievement text:
-
+### Filter by keyword:
 ```
-curl "http://localhost:3000/achievements?achievement=guides"
+curl "http://localhost:3000/achievements?achievement_like=DITA"
 ```

@@ -2,126 +2,109 @@
 title: Get portfolio items for a job
 nav_order: 2
 parent: Tutorials
-description: "Retrieve portfolio items related to a specific job entry."
+description: "Learn how to retrieve portfolio items associated with a specific job using jobId filters."
 ---
 
 # Get portfolio items for a job
 
-This tutorial explains how to retrieve portfolio items linked to a specific job. It shows how to use the `portfolio` resource with filters, read JSON responses, and understand how SmartCV connects work samples to job entries.
+This tutorial explains how to retrieve portfolio items linked to a specific job. It shows how to use the `portfolio` resource with filters, read JSON responses, and understand how SmartCV associates work samples with job roles.
 
 ## Before you begin
-Start the SmartCV service.  
-If the environment isn’t ready yet, follow:
+Start the SmartCV service.
+
+If the environment isn’t ready yet, review:
 
 - [Prerequisites](prerequisites.md)
 
 ## Goal of this tutorial
 This tutorial covers how to:
+
 - Call the `/portfolio` API  
-- Filter portfolio items by jobId  
-- Use query parameters  
+- Filter portfolio items by `jobId`  
+- Understand how SmartCV links jobs and portfolio records  
 - Read JSON responses  
 - Handle empty results  
 
 ## Step 1: Understand the endpoint
-The `portfolio` resource stores work samples linked to jobs.  
-Each entry contains:
+The `portfolio` resource stores work samples or deliverables tied to your job history.  
+Each entry includes:
 
-- name  
-- URL  
-- jobId  
 - id  
+- jobId  
+- title  
+- description  
 
 For the full schema, see:
 
-- [portfolio](../api/portfolio.md)
+- [portfolio](../api-resources/portfolio.md)
 
-## Step 2: Retrieve the job id
-First, find the job entry you want to use and note its `id` value.
+## Step 2: Identify the job you want to reference
+Each portfolio item links to a job through the `jobId` field.
 
-Example:
+Example: retrieve your **Varicent** job:
 ```
-curl "http://localhost:3000/jobs?employer_like=NRSI"
-```
-
-Response:
-```
-[
-  {
-    "title": "Web Developer",
-    "type": "wd",
-    "employer": "Non-Roman Script Initiative (NRSI)",
-    "startMonth": 6,
-    "startYear": 2015,
-    "endMonth": 10,
-    "endYear": 2017,
-    "id": 4
-  }
-]
+curl http://localhost:3000/jobs/1
 ```
 
-In this example, the job id is `4`.
+This returns the job entry with `id: 1`.
 
-## Step 3: Filter portfolio items by jobId
-Use the job id from Step 2 to fetch linked work samples:
+## Step 3: Retrieve portfolio items for that job
+Use the `jobId` query parameter to find associated portfolio items.
 
+Example: portfolio items for **Varicent** (`jobId: 1`):
 ```
-curl "http://localhost:3000/portfolio?jobId=4"
+curl "http://localhost:3000/portfolio?jobId=1"
 ```
 
 Example response:
-
 ```
 [
-  {
-    "name": "SIL PRODUCT WEBSITES",
-    "url": "https://emcham.io/product-sites/",
-    "jobId": 4,
-    "id": 4
-  },
-  {
-    "name": "WORDPRESS SHORT CODE TO GENERATE CSS FOR ARABIC CALLIGRAPHY",
-    "url": "https://emcham.io/wp-css-arabic/",
-    "jobId": 4,
-    "id": 5
-  }
+{
+"id": 1,
+"jobId": 1,
+"title": "Release Notes Generator Documentation",
+"description": "Authored structured documentation and workflows for an internal AI-powered tool."
+},
+{
+"id": 2,
+"jobId": 1,
+"title": "DITA XML Documentation Library",
+"description": "Created reusable metadata-driven content across multiple product modules."
+}
 ]
 ```
 
-SmartCV returns every portfolio item linked to jobId `4`.
+
+SmartCV returns every portfolio item linked to this job.
 
 ## Step 4: Handle no results
-If the jobId doesn’t match any portfolio item:
-
+If the job has no associated portfolio items:
 ```
 curl "http://localhost:3000/portfolio?jobId=999"
 ```
 
 Response:
-
 ```
 []
 ```
 
-An empty array means no portfolio items link to that job.
+An empty array means SmartCV found no portfolio items for that job.
 
-## Step 5: Filter portfolio items by name
-You can also filter by the portfolio name field:
-
+## Step 5: Combine this with a job lookup
+You can construct a complete “job + portfolio” view by retrieving both:
 ```
-curl "http://localhost:3000/portfolio?name_like=THEME"
+curl http://localhost:3000/jobs/1
+curl "http://localhost:3000/portfolio?jobId=1"
 ```
 
-This value can match entries that include the word “theme” in the name.
+You can merge these in your script or editor to build a full résumé profile section.
 
 ## Frequently asked questions
 
-### The response is empty. What does that mean?
-SmartCV didn’t find records that match the filter value.
-
-Example:
+### What happens if I pass an invalid jobId?
+SmartCV returns an empty array:
 ```
-curl "http://localhost:3000/portfolio?jobId=0"
+curl "http://localhost:3000/portfolio?jobId=12345"
 ```
 
 Response:
@@ -129,45 +112,27 @@ Response:
 []
 ```
 
-### Does the search ignore case?
-Yes. SmartCV compares text without considering case for `_like` queries.
+### Can one job have many portfolio items?
+Yes.  
+SmartCV returns all matching entries for the `jobId`.
 
-Example:
+### Can multiple jobs share the same portfolio item?
+No.  
+Each portfolio item stores a single `jobId` value.
+
+### Does SmartCV allow partial matching for jobId?
+No.  
+`jobId` must match exactly:
+
+Correct:
 ```
-curl "http://localhost:3000/portfolio?name_like=websites"
-```
-
-This value matches `"SIL PRODUCT WEBSITES"`.
-
-### How does SmartCV handle substring matching for names?
-SmartCV uses the `_like` suffix for substring matching.
-
-Example:
-```
-curl "http://localhost:3000/portfolio?name_like=WILDFIRE"
-```
-
-This value can match entries with “WILDFIRE” in the name.
-
-### Why do values with symbols fail?
-Characters such as `&`, `/`, or `+` need encoding.
-
-Example:
-```
-curl "http://localhost:3000/portfolio?name_like=CSS%20FOR%20ARABIC"
+curl "http://localhost:3000/portfolio?jobId=1"
 ```
 
-### Why do trailing spaces break a match?
-Whitespace changes the value.
-
-Example:
+Incorrect:
 ```
-curl "http://localhost:3000/portfolio?name_like=WEBSITES%20"
+curl "http://localhost:3000/portfolio?jobId_like=1"
 ```
 
-Response:
-```
-[]
-```
-
-Trim whitespace before sending the request.
+### Why does SmartCV use jobId instead of company names?
+SmartCV uses IDs so records remain stable even if job titles or companies change.

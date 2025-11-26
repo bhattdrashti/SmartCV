@@ -1,164 +1,165 @@
 ---
-title: Search tools and credentials
+title: Search tools and credentials by type
 nav_order: 5
 parent: Tutorials
-description: "Search and filter SmartCV tools and credentials by category or type."
+description: "Learn how to retrieve specific tools, skills, and credentials using category and keyword filters."
 ---
 
 # Search tools and credentials by type
 
-This tutorial explains how to search SmartCV tools and credentials by type or category. It shows how to filter skills, degrees, and certificates, read JSON responses, and understand how SmartCV organizes user-provided data.
+This tutorial explains how to filter SmartCV’s `tools` and `credentials` resources. It shows how to search for specific skills, tool categories, and certifications to support targeted résumé building.
 
 ## Before you begin
-Start the SmartCV service.  
-If the environment isn’t ready yet, follow:
+Start the SmartCV service.
+
+If the environment isn’t ready yet, review:
 
 - [Prerequisites](prerequisites.md)
 
 ## Goal of this tutorial
 This tutorial covers how to:
-- Search tools by type  
-- Search credentials by name or location  
-- Use query parameters  
-- Read JSON responses  
-- Handle empty results  
 
-## Step 1: Understand the tools endpoint
-The `/tools` resource lists skills and tool categories.  
-Each entry contains:
+- Filter tools by category  
+- Search tool items using keyword filters  
+- Retrieve credentials by type  
+- Search certifications and courses  
+- Use filtered results to build skill and certification sections  
 
-- tool  
-- type  
-- id  
+## Step 1: Search tools by category
+Tools are grouped into résumé-relevant categories such as:
 
-For the full schema, see:
+- Authoring Tools  
+- Design Tools  
+- Programming Languages  
+- Frameworks  
 
-- [tools](../api/tools.md)
-
-## Step 2: Filter tools by type
-Search for tools within a type code.
-
-Example for technical writing tools:
-
+Example: list your **authoring tools**:
 ```
-curl "http://localhost:3000/tools?type=tw"
+curl "http://localhost:3000/tools?category=Authoring%20Tools"
 ```
+Example categories based on your dataset:
 
-Example for web-development tools:
+- Adobe FrameMaker  
+- Paligo  
+- RoboHelp  
+- MadCap Flare  
 
+---
+
+## Step 2: Search design tools
+Retrieve design tools used for documentation and UI work.
 ```
-curl "http://localhost:3000/tools?type=wd"
-```
-
-SmartCV returns every tool that matches the type value.
-
-## Step 3: Filter tools by name
-Search for a tool directly:
-
-```
-curl "http://localhost:3000/tools?tool=Markdown"
+curl "http://localhost:3000/tools?category=Design%20Tools"
 ```
 
-For substring matching, use `_like`:
+Returns skills such as:
 
+- Figma  
+- Photoshop  
+- Illustrator  
+- Canva  
+
+---
+
+## Step 3: Search tools by keyword
+Use the `_like` suffix for partial matches.
+
+### Example: Search for Figma
 ```
-curl "http://localhost:3000/tools?tool_like=script"
-```
-
-This value can match “JavaScript” and related style-sheet tools such as Sass and Less.
-
-## Step 4: Understand the credentials endpoint
-The `/creds` resource lists degrees, classes, and certificates.  
-Each entry contains:
-
-- cred  
-- location  
-- id  
-
-For the full schema, see:
-
-- [creds](../api/creds.md)
-
-## Step 5: Filter credentials by name or location
-Search by credential name:
-
-```
-curl "http://localhost:3000/creds?cred_like=Computer"
+curl "http://localhost:3000/tools?items_like=Figma"
 ```
 
-Search by location:
+### Example: Search for DITA XML
+```
+curl "http://localhost:3000/tools?items_like=DITA"
+```
 
+### Example: Search for SolidWorks
 ```
-curl "http://localhost:3000/creds?location_like=Washington"
+curl "http://localhost:3000/tools?items_like=SolidWorks"
 ```
 
-Example response:
+---
 
+## Step 4: Search credentials by type
+You can filter credentials by:
+
+- Certification  
+- Course  
+- Education  
+
+### Example: List all certifications
 ```
-[
-  {
-    "cred": "Society for Technical Communication (STC)",
-    "location": "Washington, DC chapter",
-    "id": 2
-  }
-]
+curl "http://localhost:3000/credentials?type=Certification"
 ```
+
+### Example: List all UX or writing-related courses
+```
+curl "http://localhost:3000/credentials?name_like=Writing"
+```
+
+### Example: List AI-related certifications
+```
+curl "http://localhost:3000/credentials?name_like=AI"
+```
+---
+
+## Step 5: Find education records
+Use keyword filters to locate relevant degrees.
+
+### Example: Search IT-related education
+```
+curl "http://localhost:3000/credentials?name_like=Information"
+```
+
+### Example: Search Technical Communication programs
+```
+curl "http://localhost:3000/credentials?name_like=Technical"
+```
+---
 
 ## Frequently asked questions
 
-### The response is empty. What does that mean?
-SmartCV didn’t find records that match the filter value.
+### Can a tool belong to multiple categories?
+No.  
+Each tool category is fixed, similar to a résumé section.
+
+### Are `_like` searches case-insensitive?
+Yes.  
+SmartCV ignores letter case for all substring matches.
 
 Example:
 ```
-curl "http://localhost:3000/tools?type=ux"
+curl "http://localhost:3000/tools?items_like=dita"
 ```
 
-Response:
-```
-[]
-```
-
-### Does the search ignore case for substring filters?
-Yes. For `_like` queries, SmartCV compares text without considering case.
-
-Examples:
-```
-curl "http://localhost:3000/tools?tool_like=javascript"
-```
-
-```
-curl "http://localhost:3000/tools?tool_like=JavaScript"
-```
-
-These calls return the same results.
-
-### How does SmartCV support substring matching in tools and creds?
-SmartCV uses the `_like` suffix for substring filters.
-
-Examples:
-```
-curl "http://localhost:3000/tools?tool_like=script"
-```
-
-```
-curl "http://localhost:3000/creds?cred_like=B."
-```
-
-### Why do values with symbols need encoding?
-Characters such as `&`, `/`, or `+` need encoding.
+### Why do credentials sometimes return multiple results?
+Keyword searches match all credentials that contain the search text.
 
 Example:
 ```
-curl "http://localhost:3000/creds?cred_like=Society%20for%20Technical%20Communication"
+curl "http://localhost:3000/credentials?name_like=Technical"
+```
+
+This matches:
+
+- Technical Communication (Seneca College)  
+- Certified AI Technical Writer  
+
+### Why do some values require encoding?
+Characters such as `&`, `/`, `(`, `)` require encoding to be valid in URLs.
+
+Example:
+```
+curl "http://localhost:3000/credentials?name=Paligo%20Certified%20User"
 ```
 
 ### Why do trailing spaces break a match?
-Whitespace changes the value.
+Whitespace changes the value, so SmartCV treats it as a different string.
 
 Example:
 ```
-curl "http://localhost:3000/tools?tool_like=Markdown%20"
+curl "http://localhost:3000/tools?category=Design%20Tools%20"
 ```
 
 Response:
@@ -166,4 +167,4 @@ Response:
 []
 ```
 
-Trim whitespace before sending the request.
+Trim extra spaces before sending the request.

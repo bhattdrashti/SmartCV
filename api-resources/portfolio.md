@@ -3,11 +3,13 @@ title: Portfolio
 nav_order: 5
 parent: API resources
 description: "Portfolio items linked to jobs, used for building targeted CV outputs."
+toc: false
 ---
 
 # Portfolio API
 
-This page explains the `portfolio` resource in SmartCV. Each item lists a work sample linked to a job.
+This page explains the `portfolio` resource in SmartCV.  
+Each item represents a work sample, demo, UX writing artifact, or documentation sample connected to a specific job.
 
 ---
 
@@ -23,46 +25,62 @@ Returns a single portfolio entry by ID.
 
 | Field | Type   | Description |
 |--------|--------|-------------|
-| name   | string | Name of the work sample. |
-| URL    | string | Link to the sample. |
-| jobId  | number | Job this sample belongs to. |
+| name   | string | Name or title of the work sample. |
+| url    | string | Link to the sample (or `null` if not publicly available). |
+| jobId  | number | ID of the job this sample is associated with. |
 | id     | number | Unique identifier. |
 
 ---
 
 ## Example response
 
-```
+```json
 [
   {
-    "name": "INSTRUCTIONS FOR USE, Welch Allyn FlexiPort Disposable Blood Pressure Cuff",
-    "url": "https://bit.ly/46vnUdU",
+    "id": 1,
+    "jobId": 1,
+    "name": "Release Notes – GenAI Automation Workflow",
+    "url": null
+  },
+  {
+    "id": 2,
+    "jobId": 1,
+    "name": "DITA XML User Guide (Structured Authoring)",
+    "url": null
+  },
+  {
+    "id": 3,
     "jobId": 2,
-    "id": 1
+    "name": "Operator's Manual – Agricultural Equipment",
+    "url": null
+  },
+  {
+    "id": 4,
+    "jobId": 3,
+    "name": "Quick Start Guide – Security Camera Setup",
+    "url": null
   }
 ]
 ```
 
----
-
 ## Try it with curl
-
 ```
 curl http://localhost:3000/portfolio
 ```
 
----
-
 ## Filter items
 
-Filter by jobId:
-
+### Filter by jobId
 ```
-curl "http://localhost:3000/portfolio?jobId=2"
+curl "http://localhost:3000/portfolio?jobId=1"
 ```
 
-Filter by sample name:
-
+### Filter by sample name (exact match)
 ```
-curl "http://localhost:3000/portfolio?name=WordPress"
+curl "http://localhost:3000/portfolio?name=Operator%27s%20Manual%20%E2%80%93%20Agricultural%20Equipment"
+```
+
+### Partial match by sample name
+```
+curl "http://localhost:3000/portfolio?name_like=Guide"
 ```

@@ -2,191 +2,128 @@
 title: Build a targeted CV
 nav_order: 3
 parent: Tutorials
-description: "Build a CV that matches job description keywords using SmartCV resources."
+description: "Learn how to assemble a targeted CV using SmartCV by filtering jobs, skills, and credentials."
 ---
 
 # Build a targeted CV
 
-This tutorial explains how to build a targeted cv from SmartCV data. It shows how to select job entries, gather work samples, link achievements, and create a focused output that matches a job description.
+This tutorial explains how to create a targeted résumé by combining job experience, skills, and credentials. It shows how to use SmartCV filters to match a job posting and assemble a focused profile.
 
 ## Before you begin
-Start the SmartCV service.  
-If the environment isn’t ready yet, follow:
+Start the SmartCV service.
+
+If the environment isn’t ready yet, review:
 
 - [Prerequisites](prerequisites.md)
 
 ## Goal of this tutorial
 This tutorial covers how to:
-- Identify relevant jobs  
-- Gather portfolio items for those jobs  
-- Gather achievements for those jobs  
-- Combine the data into a targeted cv structure  
-- Read JSON responses used in cv generation  
 
-## Step 1: Identify relevant jobs
-Search for job entries that relate to the new role.
+- Identify relevant job roles  
+- Filter skills using keyword queries  
+- Retrieve matching credentials  
+- Combine data into a targeted résumé package  
 
-Example: filter by employer:
+## Step 1: Find relevant job experience
+Use SmartCV filters to match job roles by title.
 
+Example: retrieve your Technical Writer positions:
 ```
-curl "http://localhost:3000/jobs?employer_like=Baxter"
-```
-
-Example: filter by title:
-
-```
-curl "http://localhost:3000/jobs?title_like=Developer"
+curl "http://localhost:3000/jobs?title_like=Technical"
 ```
 
-Use values from the job description to guide these filters.
-
-## Step 2: Gather portfolio items for each job
-For each selected job, use its `id` as the `jobId` filter in the portfolio resource.
-
-Example for job id 3:
-
+Example output:
 ```
-curl "http://localhost:3000/portfolio?jobId=3"
-```
-
-This call returns portfolio entries linked to that job.
-
-## Step 3: Gather achievements for each job
-Use the same job id to fetch achievements:
-
-```
-curl "http://localhost:3000/achievements?jobId=3"
-```
-
-These entries describe outcomes and results for that job.
-
-## Step 4: Combine job, portfolio, and achievement data
-Create a combined structure that merges a job with its work samples and achievements.
-
-Example combined structure:
-
-```
+[
 {
-  "job": {
-    "title": "Web Developer",
-    "type": "wd",
-    "employer": "Internet Publishing Service (IPS)",
-    "startMonth": 1,
-    "startYear": 2018,
-    "endMonth": 2,
-    "endYear": 2022,
-    "id": 3
-  },
-  "portfolio_items": [
-    {
-      "name": "WILDFIRE 5 ADMIN THEME",
-      "url": "https://emcham.io/wildfire-5-admin-theme"
-    },
-    {
-      "name": "WILDFIRE CLARO ADMIN THEME",
-      "url": "https://emcham.io/wildfire-admin-claro-theme"
-    }
-  ],
-  "achievements": [
-    {
-      "achievement": "Created multilingual documentation for Drupal modules and themes, including UI localization.",
-      "id": 10
-    },
-    {
-      "achievement": "Authored integration guides for custom theme features.",
-      "id": 11
-    }
-  ]
+"id": 1,
+"title": "Technical Writer",
+"company": "Varicent",
+"location": "Toronto, ON",
+"start_date": "2022-05",
+"end_date": "Present",
+"responsibilities": [
+"Write UX copy in Figma including tooltips, empty states, and error messages.",
+"Create structured content using DITA XML and metadata.",
+"Maintain documentation consistency and clarity across channels."
+]
 }
+]
 ```
 
-This combined structure acts as the base for a targeted cv section.
+## Step 2: Filter skills that match the job posting
+Assume the targeted job requires DITA XML, Figma, Illustrator, and strong UX writing.
 
-## Step 5: Focus on the target role
-Filter the combined data so it aligns with the new role.  
-Highlight items that show:
+### Example: Search for Figma
+```
+curl "http://localhost:3000/tools?items_like=Figma"
+```
 
-- relevant tools  
-- relevant responsibilities  
-- strong achievements  
+### Example: Search for DITA XML
+```
+curl "http://localhost:3000/tools?items_like=DITA"
+```
 
-Example trimmed cv section:
+### Example: Search design tools
+```
+curl "http://localhost:3000/tools?category=Design%20Tools"
+```
 
+## Step 3: Retrieve relevant credentials
+Filter certifications and completed courses.
+
+### Example: Find UX or AI writing certifications
+```
+curl "http://localhost:3000/credentials?name_like=Technical"
+```
+
+### Example: List all certifications
+```
+curl "http://localhost:3000/credentials?type=Certification"
+```
+
+## Step 4: Assemble the targeted CV content
+A targeted CV typically includes:
+
+- Matching job experience  
+- Relevant tools and skills  
+- Certifications supporting the role  
+- Achievements and portfolio items  
+
+You can combine the filtered responses into a structured packet:
 ```
 {
-  "job_title": "Web Developer",
-  "employer": "Internet Publishing Service (IPS)",
-  "highlights": [
-    "Created multilingual documentation for Drupal themes.",
-    "Authored integration guides for custom theme features.",
-    "Delivered theme work that improved user experience."
-  ],
-  "samples": [
-    "WILDFIRE 5 ADMIN THEME",
-    "WILDFIRE CLARO ADMIN THEME"
-  ]
+"experience": [...],
+"skills": [...],
+"credentials": [...],
+"achievements": [...],
+"portfolio": [...]
 }
 ```
 
 ## Frequently asked questions
 
-### The response is empty. What does that mean?
-SmartCV didn’t find records that match the filter value.
+### Do I need to follow the steps in order?
 
-Example:
-```
-curl "http://localhost:3000/jobs?title_like=Architect"
-```
+No.  
+SmartCV lets you filter in any sequence based on what the job posting requires.
 
-Response:
-```
-[]
-```
+### Why does the targeted CV include credentials?
 
-### Does the search ignore case?
-Yes. SmartCV compares text without considering case for `_like` queries.
+Credentials strengthen your résumé by showing proof of specialization (for example, “Certified AI Technical Writer”).
 
-Examples:
-```
-curl "http://localhost:3000/jobs?title_like=developer"
-```
+### Can I generate a complete CV using one API call?
 
-```
-curl "http://localhost:3000/jobs?title_like=Developer"
-```
+Not with JSON Server.  
+You must combine the data manually or through a script.
 
-These calls return the same results.
+### Why do skills appear under different categories?
 
-### How does SmartCV support substring matching for titles?
-SmartCV uses the `_like` suffix for substring matching.
+SmartCV organizes them based on real résumé sections, such as:
 
-Example:
-```
-curl "http://localhost:3000/jobs?title_like=Writer"
-```
+- Authoring Tools  
+- Design Tools  
+- Programming  
+- Frameworks  
 
-This value can match “Technical Writer.”
-
-### Why do values with symbols need encoding?
-Characters such as `&`, `/`, and `+` need encoding.
-
-Example:
-```
-curl "http://localhost:3000/jobs?employer=Internet%20Publishing%20Service%20%28IPS%29"
-```
-
-### Why do trailing spaces break a match?
-Whitespace changes the value.
-
-Example:
-```
-curl "http://localhost:3000/jobs?title_like=Developer%20"
-```
-
-Response:
-```
-[]
-```
-
-Trim whitespace before sending the request.
-
+This helps you build better structured CVs.

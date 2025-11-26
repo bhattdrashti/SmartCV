@@ -2,12 +2,14 @@
 title: Credentials
 nav_order: 3
 parent: API resources
-description: "Degrees, certificates, and educational credentials stored in SmartCV."
+description: "Degrees, certifications, and educational credentials stored in SmartCV."
+toc: false
 ---
 
 # Credentials API
 
-This page explains the `creds` resource in SmartCV. Each item lists a degree, course, or certificate.
+This page explains the `creds` resource in SmartCV.  
+Each item represents a degree, certificate, or professional training achievement.
 
 ---
 
@@ -22,50 +24,73 @@ Returns a single credential entry by ID.
 ## Fields in this resource
 
 | Field    | Type   | Description |
-|-----------|--------|-------------|
-| cred      | string | A degree or certificate name. |
-| location  | string | Where the user earned the credential. |
-| id        | number | Unique identifier. |
+|----------|--------|-------------|
+| cred     | string | Name of the degree or certification. |
+| provider | string | Institution or organization that issued the credential. |
+| id       | number | Unique identifier. |
 
 ---
 
 ## Example response
 
-```
+```json
 [
   {
-    "cred": "API Documentation",
-    "location": "University of Washington",
-    "id": 1
+    "id": 1,
+    "cred": "Certified AI Technical Writer",
+    "provider": "Technical Writer HQ"
   },
   {
-    "cred": "B. Sc., Computer Information Systems",
-    "location": "East Texas Baptist University",
-    "id": 3
+    "id": 2,
+    "cred": "Fundamentals of UX Writing",
+    "provider": "UX Content Collective"
+  },
+  {
+    "id": 3,
+    "cred": "Paligo Certified User",
+    "provider": "Paligo"
+  },
+  {
+    "id": 4,
+    "cred": "Graduate Certificate - Technical Communication",
+    "provider": "Seneca College"
+  },
+  {
+    "id": 5,
+    "cred": "Graduate Certificate - Information Technology",
+    "provider": "Algoma University"
+  },
+  {
+    "id": 6,
+    "cred": "B.Sc. Information Technology & Computer Applications",
+    "provider": "Gujarat University"
   }
 ]
 ```
 
----
-
 ## Try it with curl
-
 ```
 curl http://localhost:3000/creds
 ```
 
----
-
 ## Filter items
 
-Filter by credential name:
-
+### Filter by credential name
 ```
-curl "http://localhost:3000/creds?cred=API Documentation"
+curl "http://localhost:3000/creds?cred=Paligo%20Certified%20User"
 ```
 
-Filter by location:
-
+### Partial match
 ```
-curl "http://localhost:3000/creds?location=Washington"
+curl "http://localhost:3000/creds?cred_like=Certificate"
+```
+
+### Filter by provider
+```
+curl "http://localhost:3000/creds?provider=Seneca%20College"
+```
+
+### Partial match by provider
+```
+curl "http://localhost:3000/creds?provider_like=Collective"
 ```

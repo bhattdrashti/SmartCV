@@ -3,11 +3,13 @@ title: Tools
 nav_order: 2
 parent: API resources
 description: "Tools, technologies, and skill categories available in SmartCV."
+toc: false
 ---
 
 # Tools API
 
-This page explains the `tools` resource in the SmartCV service. Each item lists a tool or software skill.
+This page explains the `tools` resource in SmartCV.  
+Each item represents a technical skill, authoring tool, design tool, or programming language used to support résumé generation.
 
 ---
 
@@ -23,42 +25,72 @@ Returns a single tool entry by ID.
 
 | Field | Type   | Description |
 |--------|--------|-------------|
-| tool   | string | A skill or software tool. |
-| type   | string | A category code for the tool. |
+| tool   | string | Name of the software, technology, or skill. |
+| category | string | The skill category (e.g., Writing, Design, Programming). |
 | id     | number | Unique identifier. |
 
 ---
 
 ## Example response
 
-```
+```json
 [
-  { "tool": "Adobe FrameMaker", "type": "tw", "id": 1 },
-  { "tool": "Confluence", "type": "tw", "id": 2 },
-  { "tool": "Markdown", "type": "tw", "id": 4 }
+  {
+    "id": 1,
+    "tool": "Paligo",
+    "category": "Authoring"
+  },
+  {
+    "id": 2,
+    "tool": "DITA XML",
+    "category": "Architecture"
+  },
+  {
+    "id": 3,
+    "tool": "Figma",
+    "category": "Design"
+  },
+  {
+    "id": 4,
+    "tool": "SolidWorks Composer",
+    "category": "3D Illustration"
+  },
+  {
+    "id": 5,
+    "tool": "GitHub",
+    "category": "Dev Tools"
+  },
+  {
+    "id": 6,
+    "tool": "HTML / CSS / JavaScript",
+    "category": "Programming"
+  }
 ]
 ```
 
----
-
 ## Try it with curl
-
 ```
 curl http://localhost:3000/tools
 ```
 
----
-
 ## Filter items
 
-Filter by tool name:
-
+### Filter by tool name
 ```
-curl "http://localhost:3000/tools?tool=Markdown"
+curl "http://localhost:3000/tools?tool=Figma"
 ```
 
-Filter by category:
-
+### Partial match
 ```
-curl "http://localhost:3000/tools?type=tw"
+curl "http://localhost:3000/tools?tool_like=XML"
+```
+
+### Filter by category
+```
+curl "http://localhost:3000/tools?category=Authoring"
+```
+
+### Partial match by category
+```
+curl "http://localhost:3000/tools?category_like=Design"
 ```
