@@ -14,7 +14,7 @@ Follow these steps before you start the SmartCV [tutorials](../index.md#tutorial
 
 ## About the SmartCV API
 - **Runs on:** your local computer  
-- **Main address:** http://localhost:3000  
+- **Main address:** [http://localhost:3000](http://localhost:3000) 
 - **Data format:** JavaScript Object Notation (JSON)
 
 SmartCV uses a simple REST-style layout. Each collection inside the database file becomes an endpoint.
