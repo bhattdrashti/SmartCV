@@ -43,7 +43,7 @@ For the full schema, see:
 
 ## Step 2: Make a basic request
 Retrieve all job entries:
-```
+```json
 curl http://localhost:3000/jobs
 ```
 This returns every stored job.
@@ -52,12 +52,12 @@ This returns every stored job.
 Use the `company` query parameter to search for a specific employer.
 
 Example: filter for **Varicent**:
-```
+```json
 curl "http://localhost:3000/jobs?company=Varicent"
 ```
 
 Example response:
-```
+```json
 [
 {
 "id": 1,
@@ -79,12 +79,12 @@ SmartCV returns every job entry that matches the company value.
 
 ## Step 4: Handle no results
 If the company name doesn’t match any entry:
-```
+```json
 curl "http://localhost:3000/jobs?company=SpaceX"
 ```
 
 Response:
-```
+```json
 []
 ```
 An empty array means the filter didn’t match any stored records.
@@ -93,7 +93,7 @@ An empty array means the filter didn’t match any stored records.
 Use the `_like` suffix for substring searches.
 
 Example: find entries for **Wallenstein Equipment Inc.** using only part of the name:
-```
+```json
 curl "http://localhost:3000/jobs?company_like=Wallen"
 ```
 
@@ -107,20 +107,20 @@ This returns all jobs whose `company` value contains your search text.
 SmartCV didn’t find records that match the filter value.
 
 Example:
-```
+```json
 curl "http://localhost:3000/jobs?company=Unknown%20Company"
 ```
 
 Response:
-
+```json
 []
-
+```
 ### Does the search ignore case?
 
 Yes. SmartCV compares company values without considering letter case.
 
 These calls return the same results:
-```
+```json
 curl "http://localhost:3000/jobs?company=varicent"
 curl "http://localhost:3000/jobs?company=Varicent"
 ```
@@ -130,7 +130,7 @@ curl "http://localhost:3000/jobs?company=Varicent"
 SmartCV uses the `_like` suffix for substring queries.
 
 Example:
-```
+```json
 curl "http://localhost:3000/jobs?company_like=Lorex"
 ```
 
@@ -141,12 +141,12 @@ This returns your internship at Lorex Technology.
 Characters such as `&`, `/`, or `+` need encoding.
 
 Correct:
-```
+```json
 curl "http://localhost:3000/jobs?company=Wallenstein%20Equipment%20Inc."
 ```
 
 Incorrect:
-```
+```json
 curl "http://localhost:3000/jobs?company=Wallenstein Equipment Inc."
 ```
 
@@ -155,12 +155,12 @@ curl "http://localhost:3000/jobs?company=Wallenstein Equipment Inc."
 Whitespace changes the value.
 
 Example:
-```
+```json
 curl "http://localhost:3000/jobs?company=Varicent%20"
 ```
 
 Response:
-```
+```json
 []
 ```
 

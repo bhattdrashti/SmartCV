@@ -34,7 +34,7 @@ SmartCV groups tools into résumé-relevant categories such as:
 - Frameworks  
 
 Example: list your **authoring tools**:
-```
+```json
 curl "http://localhost:3000/tools?category=Authoring%20Tools"
 ```
 Example categories based on your dataset:
@@ -48,7 +48,7 @@ Example categories based on your dataset:
 
 ## Step 2: Search design tools
 Retrieve design tools used for documentation and UI work.
-```
+```json
 curl "http://localhost:3000/tools?category=Design%20Tools"
 ```
 
@@ -65,17 +65,17 @@ Returns skills such as:
 Use the `_like` suffix for partial matches.
 
 ### Example: Search for Figma
-```
+```json
 curl "http://localhost:3000/tools?items_like=Figma"
 ```
 
 ### Example: Search for DITA XML
-```
+```json
 curl "http://localhost:3000/tools?items_like=DITA"
 ```
 
 ### Example: Search for SolidWorks
-```
+```json
 curl "http://localhost:3000/tools?items_like=SolidWorks"
 ```
 
@@ -89,17 +89,17 @@ You can filter credentials by:
 - Education  
 
 ### Example: List all certifications
-```
+```json
 curl "http://localhost:3000/credentials?type=Certification"
 ```
 
 ### Example: List all UX or writing-related courses
-```
+```json
 curl "http://localhost:3000/credentials?name_like=Writing"
 ```
 
 ### Example: List AI-related certifications
-```
+```json
 curl "http://localhost:3000/credentials?name_like=AI"
 ```
 ---
@@ -108,12 +108,12 @@ curl "http://localhost:3000/credentials?name_like=AI"
 Use keyword filters to locate relevant degrees.
 
 ### Example: Search IT-related education
-```
+```json
 curl "http://localhost:3000/credentials?name_like=Information"
 ```
 
 ### Example: Search Technical Communication programs
-```
+```json
 curl "http://localhost:3000/credentials?name_like=Technical"
 ```
 ---
@@ -129,7 +129,7 @@ Yes.
 SmartCV ignores letter case for all substring matches.
 
 Example:
-```
+```json
 curl "http://localhost:3000/tools?items_like=dita"
 ```
 
@@ -137,7 +137,7 @@ curl "http://localhost:3000/tools?items_like=dita"
 Keyword searches match all credentials that contain the search text.
 
 Example:
-```
+```json
 curl "http://localhost:3000/credentials?name_like=Technical"
 ```
 
@@ -150,7 +150,7 @@ This matches:
 Characters such as `&`, `/`, `(`, `)` require encoding to be valid in URLs.
 
 Example:
-```
+```json
 curl "http://localhost:3000/credentials?name=Paligo%20Certified%20User"
 ```
 
@@ -158,12 +158,12 @@ curl "http://localhost:3000/credentials?name=Paligo%20Certified%20User"
 Whitespace changes the value, so SmartCV treats it as a different string.
 
 Example:
-```
+```json
 curl "http://localhost:3000/tools?category=Design%20Tools%20"
 ```
 
 Response:
-```
+```json
 []
 ```
 

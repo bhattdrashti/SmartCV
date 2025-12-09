@@ -28,12 +28,14 @@ This tutorial covers how to:
 Use SmartCV filters to match job roles by title.
 
 Example: retrieve your Technical Writer positions:
+
 ```
 curl "http://localhost:3000/jobs?title_like=Technical"
 ```
 
 Example output:
-```
+
+```json
 [
 {
 "id": 1,
@@ -55,17 +57,20 @@ Example output:
 Assume the targeted job requires DITA XML, Figma, Illustrator, and strong UX writing.
 
 ### Example: Search for Figma
-```
+
+```json
 curl "http://localhost:3000/tools?items_like=Figma"
 ```
 
 ### Example: Search for DITA XML
-```
+
+```json
 curl "http://localhost:3000/tools?items_like=DITA"
 ```
 
 ### Example: Search design tools
-```
+
+```json
 curl "http://localhost:3000/tools?category=Design%20Tools"
 ```
 
@@ -73,12 +78,14 @@ curl "http://localhost:3000/tools?category=Design%20Tools"
 Filter certifications and completed courses.
 
 ### Example: Find UX or AI writing certifications
-```
+
+```json
 curl "http://localhost:3000/credentials?name_like=Technical"
 ```
 
 ### Example: List all certifications
-```
+
+```json
 curl "http://localhost:3000/credentials?type=Certification"
 ```
 
@@ -91,7 +98,8 @@ A targeted CV typically includes:
 - Achievements and portfolio items  
 
 You can combine the filtered responses into a structured packet:
-```
+
+```json
 {
 "experience": [...],
 "skills": [...],

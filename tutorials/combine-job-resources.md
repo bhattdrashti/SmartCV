@@ -29,12 +29,14 @@ This tutorial covers how to:
 Choose a job entry to work with.
 
 Example: your **Varicent Technical Writer** role (`id: 1`)
-```
+
+```json
 curl "http://localhost:3000/jobs/1"
 ```
 
 Example response:
-```
+
+```json
 {
 "id": 1,
 "title": "Technical Writer",
@@ -52,12 +54,14 @@ Example response:
 
 ## Step 2: Retrieve portfolio items for that job
 Use the job’s `id` as the `jobId` filter.
-```
+
+```json
 curl "http://localhost:3000/portfolio?jobId=1"
 ```
 
 Example response:
-```
+
+```json
 [
 {
 "id": 1,
@@ -76,12 +80,14 @@ Example response:
 
 ## Step 3: Retrieve achievements for that job
 Use the same `jobId` filter.
-```
+
+```json
 curl "http://localhost:3000/achievements?jobId=1"
 ```
 
 Example response:
-```
+
+```json
 [
 {
 "id": 1,
@@ -94,7 +100,8 @@ Example response:
 
 ## Step 4: Combine the data into one structure
 Assemble the job, portfolio items, and achievements into one JSON object:
-```
+
+```json
 {
 "job": {
 "id": 1,
@@ -134,7 +141,8 @@ Use this combined structure to create:
 Keep only items that match the target role.
 
 Example refined summary:
-```
+
+```json
 {
 "summary": [
 "Authored UX copy and interface messaging across multiple Varicent modules.",
@@ -150,12 +158,12 @@ Example refined summary:
 SmartCV didn’t find any records matching your filter.
 
 Example:
-```
+```json
 curl "http://localhost:3000/achievements?jobId=0"
 ```
 
 Response:
-```
+```json
 []
 ```
 
@@ -163,7 +171,7 @@ Response:
 Yes. `_like` filters ignore case.
 
 Example:
-```
+```json
 curl "http://localhost:3000/achievements?description_like=release"
 ```
 
@@ -171,7 +179,7 @@ curl "http://localhost:3000/achievements?description_like=release"
 Use `_like` to perform text searches.
 
 Example:
-```
+```json
 curl "http://localhost:3000/portfolio?title_like=XML"
 ```
 
@@ -179,7 +187,7 @@ curl "http://localhost:3000/portfolio?title_like=XML"
 Characters such as `(`, `)`, `&`, `/`, `%` require encoding.
 
 Example:
-```
+```json
 curl "http://localhost:3000/jobs?company=Wallenstein%20Equipment%20Inc."
 ```
 
@@ -187,12 +195,12 @@ curl "http://localhost:3000/jobs?company=Wallenstein%20Equipment%20Inc."
 Whitespace changes the value.
 
 Example:
-```
+```json
 curl "http://localhost:3000/jobs?company=Varicent%20"
 ```
 
 Response:
-```
+```json
 []
 ```
 
